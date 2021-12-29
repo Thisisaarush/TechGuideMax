@@ -17,7 +17,6 @@ export const GlobalStyle = createGlobalStyle`
     font-family: ${(props) => props.theme.headingFont}, sans-serif;
     background-color: ${(props) => props.theme.backgroundColor};
     color: ${(props) => props.theme.textColor};
-    overflow-x: hidden;
   }
 
   button, input {
@@ -30,5 +29,9 @@ export const GlobalStyle = createGlobalStyle`
 
   button {
     font-family: ${(props) => props.theme.headingFont};
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    text-transform: uppercase;
   }
 `;

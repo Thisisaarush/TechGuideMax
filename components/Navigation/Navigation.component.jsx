@@ -21,14 +21,14 @@ export const Navigation = () => {
         <LogoContainer>
           <Image
             src="/icons/logo.png"
+            alt="tech guide max logo"
             width={200}
             height={200}
-            alt="tech guide max logo"
           />
           <DayDateContainer>
-            <p>FRIDAY</p>
-            <p>DECEMBER 24, 2021</p>
-            <p>TODAY IS THE PUPIL OF YESTERDAY</p>
+            <p>sunday</p>
+            <p>december 24, 2021</p>
+            <p>today is the pupil of yesterday</p>
             <span>
               <Image
                 src="/icons/instagram.png"
@@ -56,7 +56,7 @@ export const Navigation = () => {
           <SearchBar />
           <MenuContainer>
             <span>
-              <p>TECHNOLOGY</p>
+              <p>technology</p>
               <Image
                 src="/icons/down-arrow.png"
                 alt="down arrow"
@@ -65,7 +65,7 @@ export const Navigation = () => {
               />
             </span>
             <span>
-              <p>ENTERTAINMENT</p>
+              <p>entertainment</p>
               <Image
                 src="/icons/down-arrow.png"
                 alt="down arrow"
@@ -74,7 +74,7 @@ export const Navigation = () => {
               />
             </span>
             <span>
-              <p>HOW TO</p>
+              <p>how to</p>
               <Image
                 src="/icons/down-arrow.png"
                 alt="down arrow"

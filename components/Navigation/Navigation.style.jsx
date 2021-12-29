@@ -18,13 +18,15 @@ export const LogoContainer = styled.div`
   display: flex;
 `;
 export const DayDateContainer = styled.div`
+  width: 50%;
   margin-left: 1rem;
+  text-transform: uppercase;
   p {
     margin-bottom: 0.5rem;
   }
   span {
     display: flex;
-    width: 30%;
+    width: 80px;
     justify-content: space-between;
     align-items: center;
     margin-top: 1rem;
@@ -47,6 +49,7 @@ export const MenuContainer = styled.div`
   align-items: center;
   border: 1px solid ${(props) => props.theme.borderColor};
   span {
+    text-transform: uppercase;
     background-color: white;
     color: black;
     height: 50%;

@@ -6,6 +6,8 @@ import { theme } from "../styles/theme";
 
 // components
 import { Navigation } from "../components/Navigation/Navigation.component";
+import { Footer } from "../components/Footer/Footer.component";
+import { ToTop } from "../components/ToTop/ToTop.component";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -13,7 +15,9 @@ function MyApp({ Component, pageProps }) {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Navigation />
+        <ToTop />
         <Component {...pageProps} />
+        <Footer />
       </ThemeProvider>
     </>
   );

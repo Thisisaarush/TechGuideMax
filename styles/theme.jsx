@@ -9,7 +9,7 @@ export const theme = {
   cardBackground: "#000000",
   textColor: "#ffffff",
 
-  fontSizeSmall: "8px",
+  fontSizeSmall: "12px",
   fontSizeRegular: "16px",
   fontSizeMedium: "20px",
   fontSizeLarge: "24px",
