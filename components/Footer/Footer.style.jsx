@@ -18,7 +18,7 @@ export const FooterText = styled.div`
   }
 `;
 export const SocialMediaContainer = styled.div`
-  width: 25%;
+  width: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;

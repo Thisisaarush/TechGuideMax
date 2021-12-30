@@ -8,6 +8,7 @@ export const theme = {
   borderColor: "#e5e5e5",
   cardBackground: "#000000",
   textColor: "#ffffff",
+  overlayColor: "#00000030",
 
   fontSizeSmall: "12px",
   fontSizeRegular: "16px",

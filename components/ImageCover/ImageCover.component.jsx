@@ -1,9 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import styled from "styled-components";
 
 export const ImageCover = ({ imageClass, imageUrl }) => {
   return (
-    <div className={imageClass}>
+    <ImageCoverContainer className={imageClass}>
       <Image
         src={imageUrl}
         alt="latest story"
@@ -11,6 +12,18 @@ export const ImageCover = ({ imageClass, imageUrl }) => {
         objectFit="cover"
         objectPosition="center"
       />
-    </div>
+      <Overlay></Overlay>
+    </ImageCoverContainer>
   );
 };
+
+// styled component
+const ImageCoverContainer = styled.div`
+  position: relative;
+`;
+const Overlay = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: ${(props) => props.theme.overlayColor};
+`;

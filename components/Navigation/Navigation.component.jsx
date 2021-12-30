@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 // style
 import {
@@ -9,45 +10,98 @@ import {
   DayDateContainer,
   SearchMenuContainer,
   MenuContainer,
+  MenuItem,
 } from "./Navigation.style";
 
 // components
 import { SearchBar } from "../SearchBar/SearchBar.component";
 
 export const Navigation = () => {
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+  let date = new Date();
+  let today = date.getDay();
+  let day = date.getMonth();
+
   return (
     <NavigationBossContainer>
       <NavigationContainer>
         <LogoContainer>
-          <Image
-            src="/icons/logo.png"
-            alt="tech guide max logo"
-            width={200}
-            height={200}
-          />
+          <Link href="/">
+            <a className="logo">
+              <Image
+                src="/icons/logo.png"
+                alt="tech guide max logo"
+                width={200}
+                height={200}
+              />
+            </a>
+          </Link>
           <DayDateContainer>
-            <p>sunday</p>
-            <p>december 24, 2021</p>
+            <p>{days[today - 1]}</p>
+            <p>
+              {months[day]} {date.getDate()}
+              {","} {date.getFullYear()}
+            </p>
             <p>today is the pupil of yesterday</p>
             <span>
-              <Image
-                src="/icons/instagram.png"
-                alt="social media instagram"
-                width={20}
-                height={20}
-              />
-              <Image
-                src="/icons/twitter.png"
-                alt="social media instagram"
-                width={20}
-                height={20}
-              />
-              <Image
-                src="/icons/youtube.png"
-                alt="social media instagram"
-                width={20}
-                height={20}
-              />
+              <a
+                href="https://www.instagram.com/thisisaarush/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Image
+                  src="/icons/instagram.png"
+                  alt="social media instagram"
+                  width={20}
+                  height={20}
+                />
+              </a>
+              <a
+                href="https://twitter.com/Thisisaarush"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Image
+                  src="/icons/twitter.png"
+                  alt="social media instagram"
+                  width={20}
+                  height={20}
+                />
+              </a>
+              <a
+                href="https://www.youtube.com/channel/UCCemrhxzQZFFV2m6b7id8SQ"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Image
+                  src="/icons/youtube.png"
+                  alt="social media instagram"
+                  width={20}
+                  height={20}
+                />
+              </a>
             </span>
           </DayDateContainer>
         </LogoContainer>
@@ -55,7 +109,7 @@ export const Navigation = () => {
         <SearchMenuContainer>
           <SearchBar />
           <MenuContainer>
-            <span>
+            <MenuItem>
               <p>technology</p>
               <Image
                 src="/icons/down-arrow.png"
@@ -63,8 +117,17 @@ export const Navigation = () => {
                 width={10}
                 height={10}
               />
-            </span>
-            <span>
+              <div className="menu-list">
+                <ul>
+                  <li>Android</li>
+                  <li>IOS</li>
+                  <li>Windows</li>
+                  <li>Mac</li>
+                </ul>
+              </div>
+            </MenuItem>
+
+            <MenuItem>
               <p>entertainment</p>
               <Image
                 src="/icons/down-arrow.png"
@@ -72,8 +135,16 @@ export const Navigation = () => {
                 width={10}
                 height={10}
               />
-            </span>
-            <span>
+              <div className="menu-list">
+                <ul>
+                  <li>Marvel</li>
+                  <li>Movies</li>
+                  <li>tv/shows</li>
+                </ul>
+              </div>
+            </MenuItem>
+
+            <MenuItem>
               <p>how to</p>
               <Image
                 src="/icons/down-arrow.png"
@@ -81,7 +152,15 @@ export const Navigation = () => {
                 width={10}
                 height={10}
               />
-            </span>
+              <div className="menu-list">
+                <ul>
+                  <li>Android</li>
+                  <li>IOS</li>
+                  <li>Windows</li>
+                  <li>Mac</li>
+                </ul>
+              </div>
+            </MenuItem>
           </MenuContainer>
         </SearchMenuContainer>
       </NavigationContainer>
