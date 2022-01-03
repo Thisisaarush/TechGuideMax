@@ -1,5 +1,8 @@
 import React from "react";
 
+// data
+import { TrendingData } from "../../data/Trending.data";
+
 // style
 import { TrendingContainer, TrendingHeader, Topic } from "./Trending.style";
 
@@ -9,26 +12,9 @@ export const Trending = () => {
       <TrendingHeader>
         <p>TRENDING</p>
       </TrendingHeader>
-      <Topic>
-        iPhone 14 EXCLUSIVE FIRST LOOK! No notch! New TITANIUM design! Do not
-        buy iPhone 13!
-      </Topic>
-      <Topic>
-        iPhone 14 EXCLUSIVE FIRST LOOK! No notch! New TITANIUM design! Do not
-        buy iPhone 13!
-      </Topic>
-      <Topic>
-        iPhone 14 EXCLUSIVE FIRST LOOK! No notch! New TITANIUM design! Do not
-        buy iPhone 13!
-      </Topic>
-      <Topic>
-        iPhone 14 EXCLUSIVE FIRST LOOK! No notch! New TITANIUM design! Do not
-        buy iPhone 13!
-      </Topic>
-      <Topic>
-        iPhone 14 EXCLUSIVE FIRST LOOK! No notch! New TITANIUM design! Do not
-        buy iPhone 13!
-      </Topic>
+      {TrendingData.map((data) => (
+        <Topic key={data.id}>{data.title}</Topic>
+      ))}
     </TrendingContainer>
   );
 };

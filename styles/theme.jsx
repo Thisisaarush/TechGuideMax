@@ -9,6 +9,7 @@ export const theme = {
   cardBackground: "#000000",
   textColor: "#ffffff",
   overlayColor: "#00000030",
+  buttonHoverColor: '#d60e68',
 
   fontSizeSmall: "12px",
   fontSizeRegular: "16px",

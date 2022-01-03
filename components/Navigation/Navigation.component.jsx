@@ -32,13 +32,13 @@ export const Navigation = () => {
     "December",
   ];
   const days = [
+    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday",
   ];
   let date = new Date();
   let today = date.getDay();
@@ -59,7 +59,7 @@ export const Navigation = () => {
             </a>
           </Link>
           <DayDateContainer>
-            <p>{days[today - 1]}</p>
+            <p>{days[today]}</p>
             <p>
               {months[day]} {date.getDate()}
               {","} {date.getFullYear()}

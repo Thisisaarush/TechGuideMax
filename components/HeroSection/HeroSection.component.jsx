@@ -1,5 +1,7 @@
 import React from "react";
-import Image from "next/image";
+
+// data
+import { HeroSectionData } from "../../data/HeroSection.data";
 
 // style
 import {
@@ -21,10 +23,10 @@ export const HeroSection = () => {
       <FirstSection>
         <ImageCover
           imageClass="first-image-container"
-          imageUrl="/images/demo.png"
+          imageUrl={HeroSectionData[0].imageUrl}
         />
         <FirstLastTextContainer>
-          <h1>where is spotify hifi?</h1>
+          <h1>{HeroSectionData[0].title}</h1>
           <AuthorWithDate author="aarush" date="december 24, 2021" />
         </FirstLastTextContainer>
       </FirstSection>
@@ -32,10 +34,10 @@ export const HeroSection = () => {
       <MiddleSection className="middle-first">
         <ImageCover
           imageClass="middle-image-container"
-          imageUrl="/images/demo.png"
+          imageUrl={HeroSectionData[1].imageUrl}
         />
         <MiddleTextContainer>
-          <h1>where is spotify hifi?</h1>
+          <h1>{HeroSectionData[1].title}</h1>
           <AuthorWithDate author="aarush" date="december 24, 2021" />
         </MiddleTextContainer>
       </MiddleSection>
@@ -43,10 +45,10 @@ export const HeroSection = () => {
       <MiddleSection className="middle-second">
         <ImageCover
           imageClass="middle-image-container"
-          imageUrl="/images/demo.png"
+          imageUrl={HeroSectionData[2].imageUrl}
         />
         <MiddleTextContainer>
-          <h1>where is spotify hifi?</h1>
+          <h1>{HeroSectionData[2].title}</h1>
           <AuthorWithDate author="aarush" date="december 24, 2021" />
         </MiddleTextContainer>
       </MiddleSection>
@@ -54,10 +56,10 @@ export const HeroSection = () => {
       <MiddleSection>
         <ImageCover
           imageClass="middle-image-container"
-          imageUrl="/images/demo.png"
+          imageUrl={HeroSectionData[3].imageUrl}
         />
         <MiddleTextContainer>
-          <h1>where is spotify hifi?</h1>
+          <h1>{HeroSectionData[3].title}</h1>
           <AuthorWithDate author="aarush" date="december 24, 2021" />
         </MiddleTextContainer>
       </MiddleSection>
@@ -65,10 +67,10 @@ export const HeroSection = () => {
       <MiddleSection className="middle-last">
         <ImageCover
           imageClass="middle-image-container"
-          imageUrl="/images/demo.png"
+          imageUrl={HeroSectionData[4].imageUrl}
         />
         <MiddleTextContainer>
-          <h1>where is spotify hifi?</h1>
+          <h1>{HeroSectionData[4].title}</h1>
           <AuthorWithDate author="aarush" date="december 24, 2021" />
         </MiddleTextContainer>
       </MiddleSection>
@@ -76,10 +78,10 @@ export const HeroSection = () => {
       <LastSection>
         <ImageCover
           imageClass="last-image-container"
-          imageUrl="/images/demo.png"
+          imageUrl={HeroSectionData[5].imageUrl}
         />
         <FirstLastTextContainer>
-          <h1>where is spotify hifi?</h1>
+          <h1>{HeroSectionData[5].title}</h1>
           <AuthorWithDate author="aarush" date="december 24, 2021" />
         </FirstLastTextContainer>
       </LastSection>

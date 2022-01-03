@@ -1,5 +1,8 @@
 import React from "react";
 
+// data
+import { FeaturedStoriesData } from "../../data/FeaturedStories.data";
+
 // style
 import {
   FeaturedStoriesContainer,
@@ -14,14 +17,9 @@ export const FeaturedStories = () => {
     <FeaturedStoriesContainer>
       <h1>FEATURED STORIES</h1>
       <StoriesContainer>
-        <Story />
-        <Story />
-        <Story />
-        <Story />
-        <Story />
-        <Story />
-        <Story />
-        <Story />
+        {FeaturedStoriesData.map((data) => (
+          <Story title={data.title} imageUrl={data.imageUrl} key={data.id} />
+        ))}
       </StoriesContainer>
     </FeaturedStoriesContainer>
   );

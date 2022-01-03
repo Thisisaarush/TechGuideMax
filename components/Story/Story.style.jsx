@@ -7,7 +7,6 @@ export const StoryContainer = styled.div`
   background-color: ${(props) => props.theme.cardBackground};
   display: flex;
   flex-direction: column;
-  align-items: center;
 
   .story-image-container {
     width: 100%;

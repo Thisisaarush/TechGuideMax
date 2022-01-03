@@ -14,7 +14,7 @@ export default function Home() {
         <title>Tech Guide Max</title>
         <meta
           name="description"
-          content="The Best and Beautifully Organised Tech Content, Helps & tips, How-to's & Entertainement Content with Buyer Guides. Which ultimately helps you find the best available deals and knowledge."
+          content="The Best and Beautifully Organised Tech Content, helps & tips, How-to's & Entertainement Content with Buyer Guides. Which ultimately helps you find the best available deals and articles on the internet."
         />
         <link rel="icon" href="/icons/favicon.ico" />
       </Head>

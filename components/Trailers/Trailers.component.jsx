@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+
+// data
+import { TrailersData } from "../../data/Trailers.data";
 
 // style
 import { TrailersContainer } from "./Trailers.style";
@@ -8,14 +11,21 @@ import { OtherVideo } from "../OtherVideo/OtherVideo.component";
 import { Video } from "../Video/Video.component";
 
 export const Trailers = () => {
+  const [videoUrl, setVideoUrl] = useState(TrailersData[0].videoUrl);
+
   return (
     <TrailersContainer>
       <h1>TRAILERS & CLIPS</h1>
       <div className="videos-container">
-        <Video videoID="ZYzbalQ6Lg8" />
+        <Video videoID={videoUrl} />
         <OtherVideo
-          title1="Watch Iron Man in Endgame"
-          title2="Captain America Civil War Trailer is Amazing!"
+          title1={TrailersData[1].title}
+          title2={TrailersData[2].title}
+          imageUrl1={TrailersData[1].imageUrl}
+          imageUrl2={TrailersData[2].imageUrl}
+          video1={TrailersData[1].videoUrl}
+          video2={TrailersData[2].videoUrl}
+          setVideoUrl={setVideoUrl}
         />
       </div>
     </TrailersContainer>

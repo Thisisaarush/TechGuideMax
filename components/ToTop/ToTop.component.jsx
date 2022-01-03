@@ -18,7 +18,7 @@ export const ToTop = () => {
           ToTopRef.current.style.display = "none";
         }
       } catch (e) {
-        console.log("ToTop Button is not Working");
+        console.log("To Top Button Is Not Working...");
       }
     });
   }, [y]);
@@ -26,18 +26,17 @@ export const ToTop = () => {
   return (
     <ToTopContainer
       ref={ToTopRef}
-      onClick={() => {
-        window.scrollTo(0, 0);
+      onClick={(e) => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        e.target.classList.add("hide");
       }}
     >
-      <div className="arrow">
-        <Image
-          src="/icons/down-arrow.png"
-          alt="to top button"
-          width={20}
-          height={15}
-        />
-      </div>
+      <Image
+        src="/icons/down-arrow.png"
+        alt="to top button"
+        width={20}
+        height={15}
+      />
     </ToTopContainer>
   );
 };

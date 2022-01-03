@@ -5,15 +5,15 @@ export const ToTopContainer = styled.div`
   width: 40px;
   height: 40px;
   background-color: ${(props) => props.theme.secondaryColor};
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   position: fixed;
   inset: 88vh 30px auto auto;
   z-index: 10;
-  display: none;
+  transform: rotate(180deg);
 
-  .arrow {
-    transform: rotate(180deg);
+  .hide {
+    display: none;
   }
 `;

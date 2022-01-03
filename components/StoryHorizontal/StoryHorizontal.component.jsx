@@ -10,13 +10,13 @@ import {
 import { AuthorWithDate } from "../AuthorWithDate/AuthorWithDate.component";
 import { ImageCover } from "../ImageCover/ImageCover.component";
 
-export const StoryHorizontal = ({ title }) => {
+export const StoryHorizontal = ({ title, imageUrl, author, date }) => {
   return (
     <StoryHorizontalContainer>
-      <ImageCover imageClass="image-container" imageUrl="/images/demo.png" />
+      <ImageCover imageClass="image-container" imageUrl={imageUrl} />
       <StoryContent>
         <h4>{title}</h4>
-        <AuthorWithDate author="aarush" date="december 24, 2021" />
+        <AuthorWithDate author={author} date={date} />
       </StoryContent>
     </StoryHorizontalContainer>
   );

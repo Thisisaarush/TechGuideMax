@@ -6,6 +6,7 @@ export const OtherVideosContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  cursor: pointer;
 `;
 export const VideoContainer = styled.div`
   width: 400px;
@@ -30,4 +31,9 @@ export const PlayButton = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
+
+  &:hover {
+    opacity: 80%;
+  }
 `;

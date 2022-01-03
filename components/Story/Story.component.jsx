@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 
 // style
 import { StoryContainer, StoryTextContainer } from "./Story.style";
@@ -8,19 +7,12 @@ import { StoryContainer, StoryTextContainer } from "./Story.style";
 import { ImageCover } from "../ImageCover/ImageCover.component";
 import { AuthorWithDate } from "../AuthorWithDate/AuthorWithDate.component";
 
-export const Story = () => {
+export const Story = ({ title, imageUrl }) => {
   return (
     <StoryContainer>
-      <ImageCover
-        imageClass="story-image-container"
-        imageUrl="/images/demo.png"
-      />
-
+      <ImageCover imageClass="story-image-container" imageUrl={imageUrl} />
       <StoryTextContainer className="story-text-container">
-        <h4>
-          iPhone 14 and Mixed Reality Headset to Feature Wi-Fi 6E, According to
-          Kuo
-        </h4>
+        <h4>{title}</h4>
         <AuthorWithDate author="aarush" date="december 21, 2021" />
       </StoryTextContainer>
     </StoryContainer>
