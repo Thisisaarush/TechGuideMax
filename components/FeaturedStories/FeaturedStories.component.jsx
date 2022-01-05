@@ -1,7 +1,7 @@
 import React from "react";
 
 // data
-import { FeaturedStoriesData } from "../../data/FeaturedStories.data";
+// import FeaturedStoriesData from "../../data/FeaturedStories.data.js";
 
 // style
 import {
@@ -12,7 +12,7 @@ import {
 // components
 import { Story } from "../Story/Story.component";
 
-export const FeaturedStories = () => {
+export const FeaturedStories = ({ FeaturedStoriesData }) => {
   return (
     <FeaturedStoriesContainer>
       <h1>FEATURED STORIES</h1>

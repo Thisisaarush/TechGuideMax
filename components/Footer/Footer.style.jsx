@@ -17,10 +17,3 @@ export const FooterText = styled.div`
     text-transform: uppercase;
   }
 `;
-export const SocialMediaContainer = styled.div`
-  width: 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1rem;
-`;

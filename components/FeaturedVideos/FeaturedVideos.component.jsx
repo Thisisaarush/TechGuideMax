@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // data
-import { FeaturedVideosData } from "../../data/FeaturedVideos.data";
+// import { FeaturedVideosData } from "../../data/FeaturedVideos.data";
 
 // style
 import {
@@ -13,7 +13,7 @@ import {
 import { Video } from "../Video/Video.component";
 import { OtherVideo } from "../OtherVideo/OtherVideo.component";
 
-export const FeaturedVideos = () => {
+export const FeaturedVideos = ({ FeaturedVideosData }) => {
   const [videoUrl, setVideoUrl] = useState(FeaturedVideosData[0].videoUrl);
 
   return (

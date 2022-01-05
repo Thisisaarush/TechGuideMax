@@ -1,5 +1,13 @@
 import Head from "next/head";
 
+// data
+import FeaturedStoriesData from "../data/FeaturedStories.data.json";
+import FeaturedVideosData from "../data/FeaturedVideos.data.json";
+import HeroSectionData from "../data/HeroSection.data.json";
+import LatestStoriesData from "../data/LatestStories.data.json";
+import TrailersData from "../data/Trailers.data.json";
+import TrendingData from "../data/Trending.data.json";
+
 // components
 import { HeroSection } from "../components/HeroSection/HeroSection.component";
 import { FeaturedStories } from "../components/FeaturedStories/FeaturedStories.component";
@@ -7,7 +15,28 @@ import { FeaturedVideos } from "../components/FeaturedVideos/FeaturedVideos.comp
 import { Trailers } from "../components/Trailers/Trailers.component";
 import { LatestStories } from "../components/LatestStories/LatestStories.component";
 
-export default function Home() {
+// pre-rendering the data
+export const getStaticProps = async () => {
+  return {
+    props: {
+      FeaturedStoriesData,
+      FeaturedVideosData,
+      HeroSectionData,
+      LatestStoriesData,
+      TrailersData,
+      TrendingData,
+    },
+  };
+};
+
+export default function Home({
+  FeaturedStoriesData,
+  FeaturedVideosData,
+  HeroSectionData,
+  LatestStoriesData,
+  TrailersData,
+  TrendingData,
+}) {
   return (
     <div>
       <Head>
@@ -20,11 +49,14 @@ export default function Home() {
       </Head>
 
       <main>
-        <HeroSection />
-        <FeaturedStories />
-        <FeaturedVideos />
-        <Trailers />
-        <LatestStories />
+        <HeroSection HeroSectionData={HeroSectionData} />
+        <FeaturedStories FeaturedStoriesData={FeaturedStoriesData} />
+        <FeaturedVideos FeaturedVideosData={FeaturedVideosData} />
+        <Trailers TrailersData={TrailersData} />
+        <LatestStories
+          LatestStoriesData={LatestStoriesData}
+          TrendingData={TrendingData}
+        />
       </main>
     </div>
   );

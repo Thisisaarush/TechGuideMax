@@ -15,6 +15,7 @@ import {
 
 // components
 import { SearchBar } from "../SearchBar/SearchBar.component";
+import { SocialMedia } from "../SocialMedia/SocialMedia.component";
 
 export const Navigation = () => {
   const months = [
@@ -65,44 +66,7 @@ export const Navigation = () => {
               {","} {date.getFullYear()}
             </p>
             <p>today is the pupil of yesterday</p>
-            <span>
-              <a
-                href="https://www.instagram.com/thisisaarush/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Image
-                  src="/icons/instagram.png"
-                  alt="social media instagram"
-                  width={20}
-                  height={20}
-                />
-              </a>
-              <a
-                href="https://twitter.com/Thisisaarush"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Image
-                  src="/icons/twitter.png"
-                  alt="social media instagram"
-                  width={20}
-                  height={20}
-                />
-              </a>
-              <a
-                href="https://www.youtube.com/channel/UCCemrhxzQZFFV2m6b7id8SQ"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Image
-                  src="/icons/youtube.png"
-                  alt="social media instagram"
-                  width={20}
-                  height={20}
-                />
-              </a>
-            </span>
+            <SocialMedia />
           </DayDateContainer>
         </LogoContainer>
 

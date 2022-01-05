@@ -15,9 +15,12 @@ export const FirstSection = styled.div`
   justify-content: space-between;
   grid-column: 1 / span 2;
   .first-image-container {
-    width: 50%;
+    width: 100%;
     height: 350px;
     position: relative;
+  }
+  .first-image-link {
+    width: 50%;
   }
 `;
 export const MiddleSection = styled.div`
@@ -29,6 +32,9 @@ export const MiddleSection = styled.div`
     height: 350px;
     position: relative;
     border-bottom: 1px solid ${(props) => props.theme.borderColor};
+  }
+  .middle-image-link {
+    width: 100%;
   }
   .middle-first,
   .middle-second {
@@ -47,9 +53,12 @@ export const LastSection = styled.div`
   flex-direction: row-reverse;
   grid-column: 1 / span 2;
   .last-image-container {
-    width: 50%;
+    width: 100%;
     height: 350px;
     position: relative;
+  }
+  .last-image-link {
+    width: 50%;
   }
 `;
 export const FirstLastTextContainer = styled.span`

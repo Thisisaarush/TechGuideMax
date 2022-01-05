@@ -21,6 +21,11 @@ export const ToTop = () => {
         console.log("To Top Button Is Not Working...");
       }
     });
+    return () => {
+      window.removeEventListener("scroll", () => {
+        setY(window.scrollY);
+      });
+    };
   }, [y]);
 
   return (

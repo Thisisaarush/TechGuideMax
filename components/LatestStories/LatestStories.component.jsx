@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 // data
-import { LatestStoriesData } from "../../data/LatestStories.data";
+// import { LatestStoriesData } from "../../data/LatestStories.data";
 
 // style
 import {
@@ -14,7 +14,7 @@ import {
 import { StoryHorizontal } from "../StoryHorizontal/StoryHorizontal.component";
 import { Trending } from "../Trending/Trending.component";
 
-export const LatestStories = () => {
+export const LatestStories = ({ LatestStoriesData, TrendingData }) => {
   const [storiesLoaded, setStoriesLoaded] = useState(5);
 
   useEffect(() => {}, [storiesLoaded]);
@@ -47,7 +47,7 @@ export const LatestStories = () => {
             show more
           </div>
         </div>
-        <Trending />
+        <Trending TrendingData={TrendingData} />
       </StoryTrendingContainer>
     </LatestStoriesContainer>
   );

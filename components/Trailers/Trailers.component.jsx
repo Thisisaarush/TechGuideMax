@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // data
-import { TrailersData } from "../../data/Trailers.data";
+// import { TrailersData } from "../../data/Trailers.data";
 
 // style
 import { TrailersContainer } from "./Trailers.style";
@@ -10,7 +10,7 @@ import { TrailersContainer } from "./Trailers.style";
 import { OtherVideo } from "../OtherVideo/OtherVideo.component";
 import { Video } from "../Video/Video.component";
 
-export const Trailers = () => {
+export const Trailers = ({ TrailersData }) => {
   const [videoUrl, setVideoUrl] = useState(TrailersData[0].videoUrl);
 
   return (

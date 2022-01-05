@@ -24,11 +24,11 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   input {
-    font-family: ${(props) => props.theme.bodyFont};;
+    font-family: ${(props) => props.theme.bodyFont};
   }
 
   button {
-    font-family: ${(props) => props.theme.headingFont};
+    font-family: inherit;
   }
 
   h1,h2,h3,h4,h5,h6 {
@@ -37,5 +37,10 @@ export const GlobalStyle = createGlobalStyle`
 
   ul,li {
     list-style: none;
+  }
+  
+  a {
+    color: ${(props) => props.theme.textColor};
+    text-decoration: none;
   }
 `;

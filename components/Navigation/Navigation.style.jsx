@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 // styled components
 export const NavigationBossContainer = styled.nav`
-  width: 100vw;
+  width: 100%;
   border-bottom: 1px solid ${(props) => props.theme.borderColor};
   padding: 20px;
 `;
@@ -26,14 +26,6 @@ export const DayDateContainer = styled.div`
   text-transform: uppercase;
   p {
     margin-bottom: 0.5rem;
-  }
-  span {
-    display: flex;
-    width: 80px;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
-    user-select: none;
   }
 `;
 export const SearchMenuContainer = styled.div`
