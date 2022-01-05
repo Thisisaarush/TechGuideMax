@@ -10,8 +10,11 @@ export const StoryContainer = styled.div`
 
   .story-image-container {
     width: 100%;
-    height: 50%;
+    height: 100%;
     position: relative;
+  }
+  .image-container {
+    height: 50%;
     margin-bottom: 2rem;
   }
 `;
