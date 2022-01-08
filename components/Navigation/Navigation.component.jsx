@@ -74,56 +74,42 @@ export const Navigation = () => {
           <SearchBar />
           <MenuContainer>
             <MenuItem>
-              <p>technology</p>
-              <Image
-                src="/icons/down-arrow.png"
-                alt="down arrow"
-                width={10}
-                height={10}
-              />
+              <p>technology &#x3e;</p>
               <div className="menu-list">
                 <ul>
-                  <li>Android</li>
-                  <li>IOS</li>
-                  <li>Windows</li>
-                  <li>Mac</li>
+                  <Link href="/category/android">
+                    <a>
+                      <li>Android</li>
+                    </a>
+                  </Link>
+                  <Link href="/category/apple">
+                    <a>
+                      <li>Apple</li>
+                    </a>
+                  </Link>
+                  <Link href="/category/windows">
+                    <a>
+                      <li>Windows</li>
+                    </a>
+                  </Link>
                 </ul>
               </div>
             </MenuItem>
 
             <MenuItem>
-              <p>entertainment</p>
-              <Image
-                src="/icons/down-arrow.png"
-                alt="down arrow"
-                width={10}
-                height={10}
-              />
-              <div className="menu-list">
-                <ul>
-                  <li>Marvel</li>
-                  <li>Movies</li>
-                  <li>tv/shows</li>
-                </ul>
-              </div>
+              <Link href="/category/entertainment">
+                <a>
+                  <p>entertainment</p>
+                </a>
+              </Link>
             </MenuItem>
 
             <MenuItem>
-              <p>how to</p>
-              <Image
-                src="/icons/down-arrow.png"
-                alt="down arrow"
-                width={10}
-                height={10}
-              />
-              <div className="menu-list">
-                <ul>
-                  <li>Android</li>
-                  <li>IOS</li>
-                  <li>Windows</li>
-                  <li>Mac</li>
-                </ul>
-              </div>
+              <Link href="/category/howto">
+                <a>
+                  <p>how to</p>
+                </a>
+              </Link>
             </MenuItem>
           </MenuContainer>
         </SearchMenuContainer>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 // data
@@ -14,7 +15,11 @@ export const Trending = ({ TrendingData, margin }) => {
           <p>TRENDING</p>
         </TrendingHeader>
         {TrendingData.map((data) => (
-          <Topic key={data.id}>{data.title}</Topic>
+          <Link href={`/trending/${encodeURIComponent(data.id)}`} key={data.id}>
+            <a>
+              <Topic>{data.title}</Topic>
+            </a>
+          </Link>
         ))}
       </TrendingContainer>
     </div>

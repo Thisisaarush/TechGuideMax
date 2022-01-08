@@ -17,9 +17,16 @@ export const FeaturedStories = ({ FeaturedStoriesData }) => {
     <FeaturedStoriesContainer>
       <h1>FEATURED STORIES</h1>
       <StoriesContainer>
-        {FeaturedStoriesData.map((data) => (
-          <Story title={data.title} imageUrl={data.imageUrl} key={data.id} id={data.id} />
-        ))}
+        {FeaturedStoriesData.slice(-8)
+          .reverse()
+          .map((data) => (
+            <Story
+              title={data.title}
+              imageUrl={data.imageUrl}
+              key={data.id}
+              id={data.id}
+            />
+          ))}
       </StoriesContainer>
     </FeaturedStoriesContainer>
   );

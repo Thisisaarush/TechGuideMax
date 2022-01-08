@@ -19,8 +19,8 @@ export const TrendingHeader = styled.div`
 export const Topic = styled.h5`
   font-weight: ${(props) => props.theme.fontWeightMedium};
   padding: 1rem 2rem;
-
-  &:not(:last-child) {
-    border-bottom: 1px solid ${(props) => props.theme.borderColor};
+  &:hover {
+    text-decoration: underline;
+    background-color: ${(props) => props.theme.buttonHoverColor};
   }
 `;

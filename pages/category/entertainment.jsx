@@ -1,0 +1,113 @@
+import React from "react";
+import Head from "next/head";
+import styled from "styled-components";
+
+// data
+import FeaturedStoriesData from "../../data/FeaturedStories.data.json";
+import TrailersData from "../../data/Trailers.data.json";
+import LatestStoriesData from "../../data/LatestStories.data.json";
+import TrendingData from "../../data/Trending.data.json";
+
+// components
+import { Story } from "../../components/Story/Story.component";
+import { Trailers } from "../../components/Trailers/Trailers.component";
+import { LatestStories } from "../../components/LatestStories/LatestStories.component";
+import { ImageCover } from "../../components/ImageCover/ImageCover.component";
+
+// pre-rendering data
+export const getStaticProps = async () => {
+  return {
+    props: {
+      FeaturedStoriesData,
+      TrailersData,
+      LatestStoriesData,
+      TrendingData,
+    },
+  };
+};
+
+const EntertainmentPage = ({
+  FeaturedStoriesData,
+  TrailersData,
+  LatestStoriesData,
+  TrendingData,
+}) => {
+  const filteredFeaturedStories = FeaturedStoriesData.filter((story) => {
+    return story.category.toLowerCase() === "entertainment";
+  });
+  const filteredLatestStories = LatestStoriesData.filter((story) => {
+    return story.category.toLowerCase() === "entertainment";
+  });
+
+  return (
+    <>
+      <Head>
+        <title>Entertainment - TechGuideMax</title>
+      </Head>
+
+      <main>
+        <EntertainmentPageContainer>
+          <div className="header">
+            <ImageCover
+              imageClass="image-container"
+              imageUrl="/images/entertainment.jpg"
+            />
+            <h1 className="category-title">Entertainment</h1>
+          </div>
+          <StoriesContainer>
+            {filteredFeaturedStories.map((story) => (
+              <Story
+                title={story.title}
+                imageUrl={story.imageUrl}
+                id={story.id}
+                key={story.id}
+              />
+            ))}
+          </StoriesContainer>
+        </EntertainmentPageContainer>
+        <Trailers TrailersData={TrailersData} />
+        <LatestStories
+          LatestStoriesData={filteredLatestStories}
+          TrendingData={TrendingData}
+          title="Entertainment Stories"
+        />
+      </main>
+    </>
+  );
+};
+export default EntertainmentPage;
+
+// styled components
+const EntertainmentPageContainer = styled.div`
+  width: 100%;
+  margin-inline: auto;
+  .header {
+    height: 90vh;
+    margin-bottom: 5rem;
+    position: relative;
+    .category-title {
+      letter-spacing: 4px;
+      font-size: 3rem;
+      margin-left: 1rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .image-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  }
+`;
+const StoriesContainer = styled.div`
+  width: 80%;
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 5rem;
+  padding-bottom: 5rem;
+  border-bottom: 1px solid ${(props) => props.theme.borderColor};
+`;

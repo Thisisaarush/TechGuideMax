@@ -7,18 +7,16 @@ import React, { useState, useEffect } from "react";
 import {
   LatestStoriesContainer,
   StoryTrendingContainer,
-  ShowMoreButton,
 } from "./LatestStories.style";
 
 // components
 import { StoryHorizontal } from "../StoryHorizontal/StoryHorizontal.component";
 import { Trending } from "../Trending/Trending.component";
 
-export const LatestStories = ({ LatestStoriesData, TrendingData }) => {
+export const LatestStories = ({ LatestStoriesData, TrendingData, title }) => {
   const [storiesLoaded, setStoriesLoaded] = useState(5);
 
   useEffect(() => {}, [storiesLoaded]);
-
   // handling more stories to load on button click
   const handleLoadMoreStories = (e) => {
     storiesLoaded < LatestStoriesData.length
@@ -29,23 +27,28 @@ export const LatestStories = ({ LatestStoriesData, TrendingData }) => {
 
   return (
     <LatestStoriesContainer>
-      <h1>LATEST STORIES</h1>
+      <h1>{title}</h1>
       <StoryTrendingContainer>
         <div className="stories-container">
-          {LatestStoriesData.filter((item, idx) => idx < storiesLoaded).map(
-            (data) => (
+          {LatestStoriesData.reverse()
+            .filter((item, idx) => idx < storiesLoaded)
+            .map((data) => (
               <StoryHorizontal
                 key={data.id}
                 title={data.title}
                 imageUrl={data.imageUrl}
                 author={data.author}
                 date={data.date}
+                id={data.id}
               />
-            )
+            ))}
+          {LatestStoriesData.length ? (
+            <div className="show-more" onClick={handleLoadMoreStories}>
+              show more
+            </div>
+          ) : (
+            <h4>No Stories Available</h4>
           )}
-          <div className="show-more" onClick={handleLoadMoreStories}>
-            show more
-          </div>
         </div>
         <Trending TrendingData={TrendingData} />
       </StoryTrendingContainer>

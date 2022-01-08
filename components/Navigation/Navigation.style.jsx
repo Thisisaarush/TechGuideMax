@@ -58,7 +58,7 @@ export const MenuItem = styled.span`
   position: relative;
   cursor: pointer;
   p {
-    margin-right: 5px;
+    color: black;
   }
 
   .menu-list {
@@ -91,5 +91,9 @@ export const MenuItem = styled.span`
     .menu-list {
       display: block;
     }
+  }
+
+  &:hover {
+    background-color: ${(props) => props.theme.primaryColor};
   }
 `;

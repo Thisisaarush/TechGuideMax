@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 // style
 import {
@@ -10,12 +11,20 @@ import {
 import { AuthorWithDate } from "../AuthorWithDate/AuthorWithDate.component";
 import { ImageCover } from "../ImageCover/ImageCover.component";
 
-export const StoryHorizontal = ({ title, imageUrl, author, date }) => {
+export const StoryHorizontal = ({ title, imageUrl, author, date, id }) => {
   return (
     <StoryHorizontalContainer>
-      <ImageCover imageClass="image-container" imageUrl={imageUrl} />
+      <Link href={`/story/latest/${encodeURIComponent(id)}`}>
+        <a>
+          <ImageCover imageClass="image-container" imageUrl={imageUrl} />
+        </a>
+      </Link>
       <StoryContent>
-        <h4>{title}</h4>
+        <Link href={`/story/latest/${encodeURIComponent(id)}`}>
+          <a>
+            <h4>{title}</h4>
+          </a>
+        </Link>
         <AuthorWithDate author={author} date={date} />
       </StoryContent>
     </StoryHorizontalContainer>
