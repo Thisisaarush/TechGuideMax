@@ -74,21 +74,48 @@ export const Navigation = () => {
           <SearchBar />
           <MenuContainer>
             <MenuItem>
-              <p>technology &#x3e;</p>
+              <p>
+                technology{" "}
+                <Image
+                  className="arrow"
+                  src="/icons/svgs/arrow.svg"
+                  width={10}
+                  height={10}
+                  alt="arrow"
+                />
+              </p>
               <div className="menu-list">
                 <ul>
                   <Link href="/category/android">
-                    <a>
+                    <a className="menulist-items">
+                      <Image
+                        src="/icons/svgs/android.svg"
+                        width={15}
+                        height={15}
+                        alt="category android"
+                      />
                       <li>Android</li>
                     </a>
                   </Link>
                   <Link href="/category/apple">
-                    <a>
+                    <a className="menulist-items">
+                      <Image
+                        src="/icons/svgs/apple.svg"
+                        width={15}
+                        height={15}
+                        alt="category android"
+                      />
                       <li>Apple</li>
                     </a>
                   </Link>
                   <Link href="/category/windows">
-                    <a>
+                    <a className="menulist-items">
+                      <Image
+                        src="/icons/svgs/windows.svg"
+                        width={15}
+                        height={15}
+                        alt="category android"
+                      />
                       <li>Windows</li>
                     </a>
                   </Link>

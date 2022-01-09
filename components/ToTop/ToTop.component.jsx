@@ -37,10 +37,11 @@ export const ToTop = () => {
       }}
     >
       <Image
-        src="/icons/down-arrow.png"
+        className="arrow"
+        src="/icons/svgs/arrow-black.svg"
         alt="to top button"
-        width={20}
-        height={15}
+        width={18}
+        height={18}
       />
     </ToTopContainer>
   );

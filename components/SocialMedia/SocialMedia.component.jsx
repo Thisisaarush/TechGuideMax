@@ -11,10 +11,10 @@ export const SocialMedia = () => {
         rel="noreferrer"
       >
         <Image
-          src="/icons/instagram.png"
+          src="/icons/svgs/instagram.svg"
           alt="social media instagram"
-          width={20}
-          height={20}
+          width={22}
+          height={22}
         />
       </a>
       <a
@@ -23,18 +23,18 @@ export const SocialMedia = () => {
         rel="noreferrer"
       >
         <Image
-          src="/icons/twitter.png"
+          src="/icons/svgs/twitter.svg"
           alt="social media instagram"
-          width={20}
-          height={20}
+          width={22}
+          height={22}
         />
       </a>
       <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">
         <Image
-          src="/icons/youtube.png"
+          src="/icons/svgs/youtube.svg"
           alt="social media instagram"
-          width={20}
-          height={20}
+          width={22}
+          height={22}
         />
       </a>
     </SocialMediaContainer>

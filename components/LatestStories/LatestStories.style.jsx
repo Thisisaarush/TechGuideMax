@@ -27,6 +27,7 @@ export const StoryTrendingContainer = styled.div`
     user-select: none;
     cursor: pointer;
     text-transform: uppercase;
+    transition: all 0.3s ease-out;
 
     &:hover {
       background-color: ${(props) => props.theme.buttonHoverColor};

@@ -49,7 +49,7 @@ const WindowsPage = ({
         <WindowsPageContainer>
           <div className="header">
             <Image
-              src="/icons/windows.png"
+              src="/icons/svgs/windows.svg"
               width={80}
               height={80}
               alt="category windows header"

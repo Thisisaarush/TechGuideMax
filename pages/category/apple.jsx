@@ -49,7 +49,7 @@ const ApplePage = ({
         <ApplePageContainer>
           <div className="header">
             <Image
-              src="/icons/apple.png"
+              src="/icons/svgs/apple.svg"
               width={80}
               height={80}
               alt="category apple header"

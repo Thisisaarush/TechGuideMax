@@ -11,9 +11,17 @@ export const ToTopContainer = styled.div`
   position: fixed;
   inset: 88vh 30px auto auto;
   z-index: 10;
-  transform: rotate(180deg);
+  transform: rotate(90deg);
 
   .hide {
     display: none;
+  }
+  .arrow {
+    transition: all 0.3s ease-out;
+  }
+  &:hover {
+    .arrow {
+      transform: translateX(-4px);
+    }
   }
 `;

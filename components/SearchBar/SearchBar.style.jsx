@@ -9,14 +9,23 @@ export const SearchContainer = styled.form`
 
   input {
     width: 100%;
+    height: 100%;
     background-color: ${(props) => props.theme.cardBackground};
     color: ${(props) => props.theme.textColor};
     padding: 0px 10px;
   }
   button {
     width: 200px;
+    height: 100%;
     background-color: ${(props) => props.theme.primaryColor};
     color: ${(props) => props.theme.textColor};
     text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s ease-out;
+
+    &:hover,
+    &:focus {
+      background-color: ${(props) => props.theme.buttonHoverColor};
+    }
   }
 `;

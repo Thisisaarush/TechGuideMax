@@ -40,9 +40,9 @@ export const HeroSection = ({ HeroSectionData }) => {
         </FirstLastTextContainer>
       </FirstSection>
 
-      <MiddleSection className="middle-first">
+      <MiddleSection>
         <Link href={`/article/${encodeURIComponent(HeroSectionData[1].id)}`}>
-          <a className="middle-image-link">
+          <a className="middle-image-link middle-first">
             <ImageCover
               imageClass="middle-image-container"
               imageUrl={HeroSectionData[1].imageUrl}
@@ -59,7 +59,7 @@ export const HeroSection = ({ HeroSectionData }) => {
         </MiddleTextContainer>
       </MiddleSection>
 
-      <MiddleSection className="middle-second">
+      <MiddleSection>
         <Link href={`/article/${encodeURIComponent(HeroSectionData[2].id)}`}>
           <a className="middle-image-link">
             <ImageCover
@@ -80,7 +80,7 @@ export const HeroSection = ({ HeroSectionData }) => {
 
       <MiddleSection>
         <Link href={`/article/${encodeURIComponent(HeroSectionData[3].id)}`}>
-          <a className="middle-image-link">
+          <a className="middle-image-link middle-second-last">
             <ImageCover
               imageClass="middle-image-container"
               imageUrl={HeroSectionData[3].imageUrl}
@@ -97,7 +97,7 @@ export const HeroSection = ({ HeroSectionData }) => {
         </MiddleTextContainer>
       </MiddleSection>
 
-      <MiddleSection className="middle-last">
+      <MiddleSection>
         <Link href={`/article/${encodeURIComponent(HeroSectionData[4].id)}`}>
           <a className="middle-image-link">
             <ImageCover

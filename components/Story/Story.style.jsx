@@ -23,5 +23,9 @@ export const StoryTextContainer = styled.div`
   h4 {
     margin-bottom: 1rem;
     font-weight: ${(props) => props.theme.fontWeightSemiBold};
+    transition: all 0.2s ease-out;
+    &:hover {
+      color: ${(props) => props.theme.primaryColor};
+    }
   }
 `;

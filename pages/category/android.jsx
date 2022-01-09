@@ -49,7 +49,7 @@ const AndroidPage = ({
         <AndroidPageContainer>
           <div className="header">
             <Image
-              src="/icons/android.png"
+              src="/icons/svgs/android.svg"
               width={80}
               height={80}
               alt="category android header"

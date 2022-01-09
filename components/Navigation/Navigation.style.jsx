@@ -48,17 +48,18 @@ export const MenuContainer = styled.div`
 `;
 export const MenuItem = styled.span`
   text-transform: uppercase;
-  background-color: white;
-  color: black;
   height: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 10px;
+  padding: 1rem;
   position: relative;
   cursor: pointer;
-  p {
-    color: black;
+  transition: all 0.3s ease-out;
+
+  .arrow {
+    transform: rotate(-90deg);
+    transition: all 0.3s ease-out;
   }
 
   .menu-list {
@@ -66,7 +67,7 @@ export const MenuItem = styled.span`
     height: fit-content;
     background-color: white;
     position: absolute;
-    top: 25px;
+    top: 32px;
     font-size: ${(props) => props.theme.fontSizeSmall};
     background-color: ${(props) => props.theme.cardBackground};
     overflow: hidden;
@@ -75,15 +76,22 @@ export const MenuItem = styled.span`
     z-index: 12;
     display: none;
 
-    li {
-      padding: 0.5rem 0.7rem;
-      background-color: ${(props) => props.theme.cardBackground};
-      color: white;
+    .menulist-items {
+      display: flex;
+      align-items: center;
       border-bottom: 1px solid ${(props) => props.theme.borderColor};
+      padding: 0.7rem 1rem;
 
       &:hover {
-        background-color: ${(props) => props.theme.primaryColor};
+        background-color: #ffffff78;
       }
+    }
+
+    li {
+      margin-left: 1rem;
+      background-color: ${(props) => props.theme.cardBackground};
+      color: white;
+      background-color: transparent;
     }
   }
 
@@ -95,5 +103,8 @@ export const MenuItem = styled.span`
 
   &:hover {
     background-color: ${(props) => props.theme.primaryColor};
+    .arrow {
+      transform: rotate(90deg);
+    }
   }
 `;

@@ -30,7 +30,7 @@ export const OtherVideo = ({
         <h4>{title1}</h4>
         <PlayButton>
           <Image
-            src="/icons/play-button.png"
+            src="/icons/svgs/play-button.svg"
             alt="play button"
             width={50}
             height={50}
@@ -46,7 +46,7 @@ export const OtherVideo = ({
         <h4>{title2}</h4>
         <PlayButton>
           <Image
-            src="/icons/play-button.png"
+            src="/icons/svgs/play-button.svg"
             alt="play button"
             width={50}
             height={50}
