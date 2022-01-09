@@ -11,6 +11,7 @@ export const ToTopContainer = styled.div`
   position: fixed;
   inset: 88vh 30px auto auto;
   z-index: 10;
+  user-select: none;
   transform: rotate(90deg);
 
   .hide {

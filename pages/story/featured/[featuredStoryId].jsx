@@ -11,6 +11,7 @@ import TrendingData from "../../../data/Trending.data.json";
 import { ArticleComp } from "../../../components/Article/ArticleComp.component";
 import { Trending } from "../../../components/Trending/Trending.component";
 import { MoreStuff } from "../../../components/MoreStuff/MoreStuff.component";
+import { Loading } from "../../../components/Loading/Loading.component";
 
 // pre-rendering data
 export const getStaticProps = async ({ params }) => {
@@ -37,7 +38,7 @@ const FeaturedStoryPage = ({ FeaturedStory, TrendingData }) => {
   const router = useRouter();
 
   if (router.isFallback) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   return (

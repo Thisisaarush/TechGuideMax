@@ -10,6 +10,7 @@ import LatestStoriesData from "../../data/LatestStories.data.json";
 // components
 import { Story } from "../../components/Story/Story.component";
 import { StoryHorizontal } from "../../components/StoryHorizontal/StoryHorizontal.component";
+import { Loading } from "../../components/Loading/Loading.component";
 
 // pre-rendering data
 export const getStaticProps = async () => {
@@ -46,7 +47,7 @@ const SearchPage = ({ FeaturedStoriesData, LatestStoriesData }) => {
   });
 
   if (router.isFallback) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   return (

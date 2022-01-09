@@ -20,6 +20,7 @@ export const ImageCover = ({ imageClass, imageUrl }) => {
 // styled component
 const ImageCoverContainer = styled.div`
   position: relative;
+  user-select: none;
 `;
 const Overlay = styled.div`
   position: absolute;
