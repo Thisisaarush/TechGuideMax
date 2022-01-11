@@ -5,6 +5,12 @@ export const TrendingContainer = styled.div`
   width: 350px;
   height: fit-content;
   background-color: ${(props) => props.theme.cardBackground};
+
+  @media screen and (${props => props.theme.mobileSize}) {
+    width: 95%;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+  }
 `;
 export const TrendingHeader = styled.div`
   height: 50px;

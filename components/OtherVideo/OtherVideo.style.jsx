@@ -7,6 +7,13 @@ export const OtherVideosContainer = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   cursor: pointer;
+
+  @media screen and (${(props) => props.theme.mobileSize}) {
+    height: 200px;
+    flex-direction: row;
+    margin-top: 2rem;
+    justify-content: space-between;
+  }
 `;
 export const VideoContainer = styled.div`
   width: 400px;
@@ -24,6 +31,23 @@ export const VideoContainer = styled.div`
     bottom: 20px;
     left: 50px;
     font-weight: ${(props) => props.theme.fontWeightSemiBold};
+  }
+
+  @media screen and (${(props) => props.theme.mobileSize}) {
+    width: 47%;
+    height: 50%;
+    .image-container {
+      width: 100%;
+      margin-left: auto;
+    }
+    h4 {
+      position: relative;
+      width: 95%;
+      left: auto;
+      bottom: auto;
+      font-size: ${(props) => props.theme.fontSizeSmall};
+      margin-top: 0.5rem;
+    }
   }
 `;
 export const PlayButton = styled.div`

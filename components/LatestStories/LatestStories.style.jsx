@@ -8,6 +8,14 @@ export const LatestStoriesContainer = styled.div`
   h1 {
     margin-bottom: 2rem;
   }
+
+  @media screen and (${props => props.theme.mobileSize}) {
+   width: 95%;
+   margin-bottom: 3rem; 
+   h1 {
+     text-align: center;
+   }
+  }
 `;
 export const StoryTrendingContainer = styled.div`
   display: flex;
@@ -38,5 +46,17 @@ export const StoryTrendingContainer = styled.div`
     &:hover {
       background-color: grey;
     }
+  }
+
+  @media screen and (${props => props.theme.mobileSize}) {
+    flex-direction: column;
+    .show-more {
+      margin-top: 3rem;
+      margin-bottom: 5rem;
+    }
+    .stories-container {
+      margin-right: auto;
+    }
+
   }
 `;

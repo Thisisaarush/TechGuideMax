@@ -1,10 +1,11 @@
 import React from "react";
+import styled from "styled-components";
 
 export const Video = ({ videoID }) => {
   const videoUrl = `https://youtube.com/embed/${videoID}?rel=0`;
 
   return (
-    <div>
+    <VideoContainer>
       <iframe
         src={videoUrl}
         width="800"
@@ -12,6 +13,17 @@ export const Video = ({ videoID }) => {
         frameBorder="0"
         allowFullScreen
       ></iframe>
-    </div>
+    </VideoContainer>
   );
 };
+
+// styled components
+const VideoContainer = styled.div`
+  width: 100%;
+  @media screen and (${(props) => props.theme.mobileSize}) {
+    iframe {
+      width: 100%;
+      height: 210px;
+    }
+  }
+`;

@@ -26,7 +26,7 @@ export const ToTop = () => {
         setY(window.scrollY);
       });
     };
-  }, [y]);
+  });
 
   return (
     <ToTopContainer

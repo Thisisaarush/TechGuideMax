@@ -12,5 +12,18 @@ export const TrailersContainer = styled.div`
   .videos-container {
     margin-bottom: 5rem;
     display: flex;
+
+    @media screen and (${(props) => props.theme.mobileSize}) {
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+  }
+
+  @media screen and (${(props) => props.theme.mobileSize}) {
+    width: 95%;
+    h1 {
+      text-align: center;
+    }
   }
 `;

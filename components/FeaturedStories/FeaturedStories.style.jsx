@@ -6,6 +6,14 @@ export const FeaturedStoriesContainer = styled.div`
   margin: 0 auto;
   margin-bottom: 5rem;
   border-bottom: 1px solid ${(props) => props.theme.borderColor};
+
+  @media screen and (${(props) => props.theme.mobileSize}) {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 export const StoriesContainer = styled.div`
   display: flex;

@@ -7,6 +7,10 @@ export const FooterContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   padding: 5rem 0;
+
+  @media screen and (${(props) => props.theme.mobileSize}) {
+    padding: 1rem;
+  }
 `;
 export const FooterText = styled.div`
   h1 {
@@ -15,5 +19,15 @@ export const FooterText = styled.div`
   p {
     font-family: ${(props) => props.theme.bodyFont};
     text-transform: uppercase;
+  }
+
+  @media screen and (${(props) => props.theme.mobileSize}) {
+    width: 100%;
+    h1 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: ${(props) => props.theme.fontSizeSmall};
+    }
   }
 `;

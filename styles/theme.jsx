@@ -13,6 +13,7 @@ export const theme = {
   buttonHoverColor: "#d60e68",
 
   fontSizeSmall: "12px",
+  fontSizeTiny: "14px",
   fontSizeRegular: "16px",
   fontSizeMedium: "20px",
   fontSizeLarge: "24px",
@@ -28,4 +29,6 @@ export const theme = {
   fontWeightSemiBold: "600",
   fontWeightBold: "700",
   fontWeightBlack: "900",
+
+  mobileSize: "max-width : 600px",
 };

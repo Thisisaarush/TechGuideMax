@@ -13,7 +13,19 @@ export const FeaturedVideosContainer = styled.div`
   h1 {
     margin-bottom: 2rem;
   }
+
+  @media screen and (${(props) => props.theme.mobileSize}) {
+    width: 95%;
+    padding-bottom: 3rem;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 export const VideosContainer = styled.div`
   display: flex;
+
+  @media screen and (${(props) => props.theme.mobileSize}) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;

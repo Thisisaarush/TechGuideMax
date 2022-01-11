@@ -28,4 +28,9 @@ export const SearchContainer = styled.form`
       background-color: ${(props) => props.theme.buttonHoverColor};
     }
   }
+
+  @media screen and (${props => props.theme.mobileSize}) {
+   width: 95vw;
+   margin-top: 0.5rem;
+  }
 `;

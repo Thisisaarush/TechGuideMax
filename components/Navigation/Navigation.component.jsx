@@ -65,7 +65,7 @@ export const Navigation = () => {
               {months[day]} {date.getDate()}
               {","} {date.getFullYear()}
             </p>
-            <p>today is the pupil of yesterday</p>
+            <p className="quote">today is the pupil of yesterday</p>
             <SocialMedia />
           </DayDateContainer>
         </LogoContainer>

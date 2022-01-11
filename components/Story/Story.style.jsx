@@ -17,6 +17,11 @@ export const StoryContainer = styled.div`
     height: 50%;
     margin-bottom: 2rem;
   }
+
+  @media screen and (${props => props.theme.mobileSize}) {
+    width: 100%;
+    height: 420px;
+  }
 `;
 export const StoryTextContainer = styled.div`
   padding: 0 1rem;
@@ -26,6 +31,12 @@ export const StoryTextContainer = styled.div`
     transition: all 0.2s ease-out;
     &:hover {
       color: ${(props) => props.theme.primaryColor};
+    }
+  }
+
+  @media screen and (${props => props.theme.mobileSize}) {
+    h4 {
+      margin-bottom: 1.5rem;
     }
   }
 `;

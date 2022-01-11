@@ -5,6 +5,10 @@ export const NavigationBossContainer = styled.nav`
   width: 100%;
   border-bottom: 1px solid ${(props) => props.theme.borderColor};
   padding: 20px;
+
+  @media screen and (${(props) => props.theme.mobileSize}) {
+    padding: 10px;
+  }
 `;
 export const NavigationContainer = styled.div`
   width: 80%;
@@ -12,12 +16,23 @@ export const NavigationContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (${(props) => props.theme.mobileSize}) {
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 export const LogoContainer = styled.div`
   width: 50%;
   display: flex;
   .logo {
     user-select: none;
+  }
+
+  @media screen and (${(props) => props.theme.mobileSize}) {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
   }
 `;
 export const DayDateContainer = styled.div`
@@ -27,6 +42,13 @@ export const DayDateContainer = styled.div`
   p {
     margin-bottom: 0.5rem;
   }
+
+  @media screen and (${(props) => props.theme.mobileSize}) {
+    width: 100%;
+    .quote {
+      display: none;
+    }
+  }
 `;
 export const SearchMenuContainer = styled.div`
   width: 50%;
@@ -35,6 +57,12 @@ export const SearchMenuContainer = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-end;
+
+  @media screen and (${(props) => props.theme.mobileSize}) {
+    width: 100%;
+    align-items: center;
+    height: 140px;
+  }
 `;
 export const MenuContainer = styled.div`
   background-color: ${(props) => props.theme.cardBackground};
@@ -45,6 +73,10 @@ export const MenuContainer = styled.div`
   align-items: center;
   border: 1px solid ${(props) => props.theme.borderColor};
   user-select: none;
+
+  @media screen and (${(props) => props.theme.mobileSize}) {
+    width: 95vw;
+  }
 `;
 export const MenuItem = styled.span`
   text-transform: uppercase;
@@ -105,6 +137,12 @@ export const MenuItem = styled.span`
     background-color: ${(props) => props.theme.primaryColor};
     .arrow {
       transform: rotate(90deg);
+    }
+  }
+
+  @media screen and (${(props) => props.theme.mobileSize}) {
+    p {
+      font-size: ${(props) => props.theme.fontSizeSmall};
     }
   }
 `;
