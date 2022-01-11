@@ -120,8 +120,18 @@ const SearchPageContainer = styled.div`
   @media screen and (${(props) => props.theme.mobileSize}) {
     width: 90%;
   }
+  @media screen and (${(props) => props.theme.tabSize}) {
+    width: 90%;
+  }
 `;
-const FeaturedStoriesContainer = styled.div``;
+const FeaturedStoriesContainer = styled.div`
+  @media screen and (${(props) => props.theme.tabSize}) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+`;
 const LatestStoriesContainer = styled.div`
   margin-bottom: 5rem;
 `;
@@ -130,11 +140,20 @@ const FeaturedStories = styled.div`
   flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 5rem;
+
+  @media screen and (${(props) => props.theme.tabSize}) {
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 const LatestStories = styled.div`
   width: 80%;
 
   @media screen and (${(props) => props.theme.mobileSize}) {
+    width: 95%;
+  }
+  @media screen and (${(props) => props.theme.tabSize}) {
     width: 95%;
   }
 `;

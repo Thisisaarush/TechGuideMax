@@ -95,7 +95,7 @@ const ApplePageContainer = styled.div`
     }
   }
 
-  @media screen and (${props => props.theme.mobileSize}) {
+  @media screen and (${(props) => props.theme.mobileSize}) {
     width: 90%;
   }
 `;
@@ -106,4 +106,10 @@ const StoriesContainer = styled.div`
   margin-bottom: 5rem;
   padding-bottom: 5rem;
   border-bottom: 1px solid ${(props) => props.theme.borderColor};
+
+  @media screen and (${(props) => props.theme.tabSize}) {
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
 `;

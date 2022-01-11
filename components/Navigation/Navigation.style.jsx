@@ -21,6 +21,9 @@ export const NavigationContainer = styled.div`
     flex-direction: column;
     width: 100%;
   }
+  @media screen and (${(props) => props.theme.tabSize}) {
+    width: 100%;
+  }
 `;
 export const LogoContainer = styled.div`
   width: 50%;
@@ -49,6 +52,12 @@ export const DayDateContainer = styled.div`
       display: none;
     }
   }
+  @media screen and (${(props) => props.theme.tabSize}) {
+    width: 100%;
+    .quote {
+      display: none;
+    }
+  }
 `;
 export const SearchMenuContainer = styled.div`
   width: 50%;
@@ -62,6 +71,9 @@ export const SearchMenuContainer = styled.div`
     width: 100%;
     align-items: center;
     height: 140px;
+  }
+  @media screen and (${(props) => props.theme.tabSize}) {
+    height: 150px;
   }
 `;
 export const MenuContainer = styled.div`

@@ -83,4 +83,12 @@ export const ArticlePageContainer = styled.div`
       margin-top: 2rem;
     }
   }
+  @media screen and (${props => props.theme.tabSize}) {
+    width: 95%;
+    align-items: center;
+    flex-direction: column;
+    .trending-margin {
+      margin-top: 2rem;
+    }
+  }
 `;

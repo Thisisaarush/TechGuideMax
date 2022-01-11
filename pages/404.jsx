@@ -29,4 +29,10 @@ const Custom404PageContainer = styled.div`
       height: 320px;
     }
   }
+  @media screen and (${(props) => props.theme.tabSize}) {
+    height: 65vh;
+    .image-container {
+      height: 600px;
+    }
+  }
 `;

@@ -14,6 +14,16 @@ export const FeaturedStoriesContainer = styled.div`
     justify-content: center;
     align-items: center;
   }
+  @media screen and (${(props) => props.theme.tabSize}) {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      margin-bottom: 2rem;
+    }
+  }
 `;
 export const StoriesContainer = styled.div`
   display: flex;
@@ -21,4 +31,10 @@ export const StoriesContainer = styled.div`
   gap: 1rem;
   margin-top: 2rem;
   margin-bottom: 5rem;
+
+  @media screen and (${(props) => props.theme.tabSize}) {
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
 `;

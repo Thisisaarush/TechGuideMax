@@ -29,6 +29,12 @@ const MoreStuffContainer = styled.div`
       text-align: center;
     }
   }
+  @media screen and (${(props) => props.theme.tabSize}) {
+    width: 95%;
+    h2 {
+      text-align: center;
+    }
+  }
 `;
 const Stuff = styled.div`
   width: 50%;
@@ -46,5 +52,9 @@ const Stuff = styled.div`
   @media screen and (${(props) => props.theme.mobileSize}) {
     width: 100%;
     font-size: ${(props) => props.theme.fontSizeTiny};
+  }
+  @media screen and (${(props) => props.theme.tabSize}) {
+    width: 80%;
+    margin-inline: auto;
   }
 `;

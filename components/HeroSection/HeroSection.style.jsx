@@ -14,6 +14,12 @@ export const HeroSectionContainer = styled.div`
     width: 95%;
     grid-template-columns: 1fr;
   }
+  @media screen and (${(props) => props.theme.tabSize}) {
+    width: 95%;
+  }
+  @media screen and (${(props) => props.theme.largeDisplaySize}) {
+    width: 75%;
+  }
 `;
 export const FirstSection = styled.div`
   display: flex;
@@ -105,6 +111,9 @@ export const FirstLastTextContainer = styled.span`
     bottom: 1rem;
     width: 95%;
     margin-left: 0.5rem;
+    font-size: 0.9rem;
+  }
+  @media screen and (${(props) => props.theme.tabSize}) {
     font-size: 0.9rem;
   }
 `;

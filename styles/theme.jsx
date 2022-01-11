@@ -31,4 +31,6 @@ export const theme = {
   fontWeightBlack: "900",
 
   mobileSize: "max-width : 600px",
+  tabSize: "max-width : 1200px",
+  largeDisplaySize: "min-width : 1600px",
 };

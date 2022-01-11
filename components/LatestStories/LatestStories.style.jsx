@@ -9,12 +9,19 @@ export const LatestStoriesContainer = styled.div`
     margin-bottom: 2rem;
   }
 
-  @media screen and (${props => props.theme.mobileSize}) {
-   width: 95%;
-   margin-bottom: 3rem; 
-   h1 {
-     text-align: center;
-   }
+  @media screen and (${(props) => props.theme.mobileSize}) {
+    width: 95%;
+    margin-bottom: 3rem;
+    h1 {
+      text-align: center;
+    }
+  }
+  @media screen and (${(props) => props.theme.tabSize}) {
+    width: 95%;
+    margin-bottom: 3rem;
+    h1 {
+      text-align: center;
+    }
   }
 `;
 export const StoryTrendingContainer = styled.div`
@@ -48,7 +55,7 @@ export const StoryTrendingContainer = styled.div`
     }
   }
 
-  @media screen and (${props => props.theme.mobileSize}) {
+  @media screen and (${(props) => props.theme.mobileSize}) {
     flex-direction: column;
     .show-more {
       margin-top: 3rem;
@@ -57,6 +64,16 @@ export const StoryTrendingContainer = styled.div`
     .stories-container {
       margin-right: auto;
     }
-
+  }
+  @media screen and (${(props) => props.theme.tabSize}) {
+    flex-direction: column;
+    align-items: center;
+    .show-more {
+      margin-top: 3rem;
+      margin-bottom: 5rem;
+    }
+    .stories-container {
+      margin-right: auto;
+    }
   }
 `;

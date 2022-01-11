@@ -26,4 +26,10 @@ const VideoContainer = styled.div`
       height: 210px;
     }
   }
+  @media screen and (${(props) => props.theme.largeDisplaySize}) {
+    iframe {
+      width: 1100px;
+      height: 600px;
+    }
+  }
 `;

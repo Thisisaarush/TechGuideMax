@@ -18,9 +18,20 @@ export const TrailersContainer = styled.div`
       justify-content: center;
       margin-bottom: 3rem;
     }
+    @media screen and (${(props) => props.theme.tabSize}) {
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 0rem;
+    }
   }
 
   @media screen and (${(props) => props.theme.mobileSize}) {
+    width: 95%;
+    h1 {
+      text-align: center;
+    }
+  }
+  @media screen and (${(props) => props.theme.tabSize}) {
     width: 95%;
     h1 {
       text-align: center;

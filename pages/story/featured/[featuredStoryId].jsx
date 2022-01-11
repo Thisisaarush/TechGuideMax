@@ -36,7 +36,11 @@ export const getStaticPaths = async () => {
   };
 };
 
-const FeaturedStoryPage = ({ FeaturedStory, TrendingData, LatestStoriesData }) => {
+const FeaturedStoryPage = ({
+  FeaturedStory,
+  TrendingData,
+  LatestStoriesData,
+}) => {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -76,9 +80,17 @@ const FeaturedStoryPageContainer = styled.div`
     margin-top: 12.9rem;
   }
 
-  @media screen and (${props => props.theme.mobileSize}) {
+  @media screen and (${(props) => props.theme.mobileSize}) {
     width: 95%;
     flex-direction: column;
+    .trending-margin {
+      margin-top: 3rem;
+    }
+  }
+  @media screen and (${(props) => props.theme.tabSize}) {
+    width: 95%;
+    flex-direction: column;
+    align-items: center;
     .trending-margin {
       margin-top: 3rem;
     }

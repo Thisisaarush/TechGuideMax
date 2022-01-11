@@ -82,4 +82,12 @@ export const TrendingPageContainer = styled.div`
       margin-top: 3rem;
     }
   }
+  @media screen and (${(props) => props.theme.tabSize}) {
+    width: 95%;
+    flex-direction: column;
+    align-items: center;
+    .trending-margin {
+      margin-top: 3rem;
+    }
+  }
 `;

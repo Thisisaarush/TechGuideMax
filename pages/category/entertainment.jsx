@@ -101,12 +101,17 @@ const EntertainmentPageContainer = styled.div`
     }
   }
 
-  @media screen and (${props => props.theme.mobileSize}) {
+  @media screen and (${(props) => props.theme.mobileSize}) {
     .header {
       height: 40vh;
       .category-title {
         font-size: 2rem;
       }
+    }
+  }
+  @media screen and (${(props) => props.theme.tabSize}) {
+    .header {
+      height: 50vh;
     }
   }
 `;
@@ -120,7 +125,12 @@ const StoriesContainer = styled.div`
   padding-bottom: 5rem;
   border-bottom: 1px solid ${(props) => props.theme.borderColor};
 
-  @media screen and (${props => props.theme.mobileSize}) {
+  @media screen and (${(props) => props.theme.mobileSize}) {
     width: 90%;
+  }
+  @media screen and (${(props) => props.theme.tabSize}) {
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
   }
 `;

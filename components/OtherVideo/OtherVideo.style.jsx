@@ -14,6 +14,12 @@ export const OtherVideosContainer = styled.div`
     margin-top: 2rem;
     justify-content: space-between;
   }
+  @media screen and (${(props) => props.theme.tabSize}) {
+    height: 300px;
+    flex-direction: row;
+    margin-top: 2rem;
+    justify-content: space-between;
+  }
 `;
 export const VideoContainer = styled.div`
   width: 400px;
@@ -47,6 +53,21 @@ export const VideoContainer = styled.div`
       bottom: auto;
       font-size: ${(props) => props.theme.fontSizeSmall};
       margin-top: 0.5rem;
+    }
+  }
+  @media screen and (${(props) => props.theme.tabSize}) {
+    width: 47%;
+    height: 50%;
+    .image-container {
+      width: 100%;
+      margin-left: auto;
+    }
+    h4 {
+      position: relative;
+      width: 95%;
+      left: auto;
+      bottom: auto;
+      margin-top: 1rem;
     }
   }
 `;

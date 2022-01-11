@@ -7,6 +7,9 @@ export const ArticleContainer = styled.div`
   @media screen and (${props => props.theme.mobileSize}) {
     width: 100%;
   }
+  @media screen and (${props => props.theme.tabSize}) {
+    width: 100%;
+  }
 `;
 export const ArticleHeader = styled.div`
   border-bottom: 1px solid ${(props) => props.theme.borderColor};
@@ -22,6 +25,9 @@ export const ArticleHeader = styled.div`
     h1 {
       font-size: 1.5rem;
     }
+  }
+  @media screen and (${props => props.theme.tabSize}) {
+    margin-bottom: 2rem;
   }
 `;
 export const ArticleContent = styled.div`

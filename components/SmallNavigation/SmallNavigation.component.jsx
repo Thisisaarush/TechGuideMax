@@ -41,4 +41,9 @@ const SmallNavigationContainer = styled.div`
       }
     }
   }
+  @media screen and (${(props) => props.theme.tabSize}) {
+    .navbar {
+      width: 95%;
+    }
+  }
 `;

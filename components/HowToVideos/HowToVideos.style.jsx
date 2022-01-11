@@ -21,11 +21,21 @@ export const HowToVideosContainer = styled.div`
       text-align: center;
     }
   }
+  @media screen and (${(props) => props.theme.tabSize}) {
+    width: 95%;
+    padding-bottom: 0rem;
+    h1 {
+      text-align: center;
+    }
+  }
 `;
 export const VideosContainer = styled.div`
   display: flex;
 
   @media screen and (${(props) => props.theme.mobileSize}) {
+    flex-direction: column;
+  }
+  @media screen and (${(props) => props.theme.tabSize}) {
     flex-direction: column;
   }
 `;
