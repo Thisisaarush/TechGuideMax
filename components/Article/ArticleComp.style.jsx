@@ -3,6 +3,10 @@ import styled from "styled-components";
 // styled components
 export const ArticleContainer = styled.div`
   width: 60%;
+
+  @media screen and (${props => props.theme.mobileSize}) {
+    width: 100%;
+  }
 `;
 export const ArticleHeader = styled.div`
   border-bottom: 1px solid ${(props) => props.theme.borderColor};
@@ -11,6 +15,13 @@ export const ArticleHeader = styled.div`
   .article-category {
     color: ${(props) => props.theme.secondaryColor};
     text-transform: uppercase;
+  }
+
+  @media screen and (${props => props.theme.mobileSize}) {
+    margin-bottom: 2rem;
+    h1 {
+      font-size: 1.5rem;
+    }
   }
 `;
 export const ArticleContent = styled.div`
@@ -41,6 +52,12 @@ export const ArticleContent = styled.div`
       text-transform: capitalize;
       color: ${(props) => props.theme.primaryColor};
       font-size: 1.5rem;
+    }
+  }
+
+  @media screen and (${props => props.theme.mobileSize}) {
+    .image-container {
+      height: 200px;
     }
   }
 `;

@@ -31,4 +31,14 @@ const SmallNavigationContainer = styled.div`
     align-items: center;
     padding: 1.5rem 0;
   }
+
+  @media screen and (${(props) => props.theme.mobileSize}) {
+    .navbar {
+      width: 95%;
+      flex-direction: column;
+      h1 {
+        margin-bottom: 1rem;
+      }
+    }
+  }
 `;

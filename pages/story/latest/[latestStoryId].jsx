@@ -74,4 +74,12 @@ const LatestStoryPageContainer = styled.div`
   .trending-margin {
     margin-top: 12.9rem;
   }
+
+  @media screen and (${(props) => props.theme.mobileSize}) {
+    width: 95%;
+    flex-direction: column;
+    .trending-margin {
+      margin-top: 3rem;
+    }
+  }
 `;

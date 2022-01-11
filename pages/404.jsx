@@ -22,4 +22,11 @@ const Custom404PageContainer = styled.div`
     width: 100%;
     height: 100%;
   }
+
+  @media screen and (${(props) => props.theme.mobileSize}) {
+    height: 63vh;
+    .image-container {
+      height: 320px;
+    }
+  }
 `;

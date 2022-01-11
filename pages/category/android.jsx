@@ -94,6 +94,10 @@ const AndroidPageContainer = styled.div`
       margin-left: 1rem;
     }
   }
+
+  @media screen and (${(props) => props.theme.mobileSize}) {
+    width: 90%;
+  }
 `;
 const StoriesContainer = styled.div`
   display: flex;

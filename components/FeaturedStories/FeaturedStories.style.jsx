@@ -8,7 +8,7 @@ export const FeaturedStoriesContainer = styled.div`
   border-bottom: 1px solid ${(props) => props.theme.borderColor};
 
   @media screen and (${(props) => props.theme.mobileSize}) {
-    width: 95%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;

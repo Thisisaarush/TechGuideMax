@@ -100,6 +100,15 @@ const HowtoPageContainer = styled.div`
       height: 100%;
     }
   }
+
+  @media screen and (${props => props.theme.mobileSize}) {
+    .header {
+      height: 40vh;
+      .category-title {
+        font-size: 2rem;
+      }
+    }
+  }
 `;
 const StoriesContainer = styled.div`
   width: 80%;
@@ -110,4 +119,8 @@ const StoriesContainer = styled.div`
   margin-bottom: 5rem;
   padding-bottom: 5rem;
   border-bottom: 1px solid ${(props) => props.theme.borderColor};
+
+  @media screen and (${props => props.theme.mobileSize}) {
+    width: 90%;
+  }
 `;

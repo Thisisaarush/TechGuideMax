@@ -116,6 +116,10 @@ const SearchPageContainer = styled.div`
     font-weight: ${(props) => props.theme.fontWeightMedium};
     margin-bottom: 2rem;
   }
+
+  @media screen and (${(props) => props.theme.mobileSize}) {
+    width: 90%;
+  }
 `;
 const FeaturedStoriesContainer = styled.div``;
 const LatestStoriesContainer = styled.div`
@@ -129,4 +133,8 @@ const FeaturedStories = styled.div`
 `;
 const LatestStories = styled.div`
   width: 80%;
+
+  @media screen and (${(props) => props.theme.mobileSize}) {
+    width: 95%;
+  }
 `;

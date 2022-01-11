@@ -22,6 +22,13 @@ const MoreStuffContainer = styled.div`
   width: 80%;
   margin-inline: auto;
   margin-bottom: 5rem;
+
+  @media screen and (${(props) => props.theme.mobileSize}) {
+    width: 95%;
+    h2 {
+      text-align: center;
+    }
+  }
 `;
 const Stuff = styled.div`
   width: 50%;
@@ -34,5 +41,10 @@ const Stuff = styled.div`
 
   &:hover {
     text-decoration: underline;
+  }
+
+  @media screen and (${(props) => props.theme.mobileSize}) {
+    width: 100%;
+    font-size: ${(props) => props.theme.fontSizeTiny};
   }
 `;
