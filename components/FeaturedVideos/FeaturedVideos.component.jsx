@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 
-// data
-// import { FeaturedVideosData } from "../../data/FeaturedVideos.data";
-
 // style
 import {
   FeaturedVideosContainer,

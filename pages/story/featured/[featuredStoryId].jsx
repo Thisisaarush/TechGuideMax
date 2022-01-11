@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 // data
 import FeaturedStoriesData from "../../../data/FeaturedStories.data.json";
 import TrendingData from "../../../data/Trending.data.json";
+import LatestStoriesData from "../../../data/LatestStories.data.json";
 
 // components
 import { ArticleComp } from "../../../components/Article/ArticleComp.component";
@@ -21,6 +22,7 @@ export const getStaticProps = async ({ params }) => {
         return story.id.toString() === params.featuredStoryId;
       }),
       TrendingData,
+      LatestStoriesData,
     },
   };
 };
@@ -34,7 +36,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-const FeaturedStoryPage = ({ FeaturedStory, TrendingData }) => {
+const FeaturedStoryPage = ({ FeaturedStory, TrendingData, LatestStoriesData }) => {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -52,7 +54,7 @@ const FeaturedStoryPage = ({ FeaturedStory, TrendingData }) => {
           <ArticleComp ArticleData={FeaturedStory} />
           <Trending TrendingData={TrendingData} margin="trending-margin" />
         </FeaturedStoryPageContainer>
-        <MoreStuff />
+        <MoreStuff MoreStuffData={LatestStoriesData} />
       </main>
     </>
   );

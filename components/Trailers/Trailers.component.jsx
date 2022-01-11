@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 
-// data
-// import { TrailersData } from "../../data/Trailers.data";
-
 // style
 import { TrailersContainer } from "./Trailers.style";
 

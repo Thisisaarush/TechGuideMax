@@ -1,30 +1,18 @@
+import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
-export const MoreStuff = () => {
+export const MoreStuff = ({ MoreStuffData }) => {
   return (
     <MoreStuffContainer>
       <h2>more stuff</h2>
-      <Stuff>
-        iPhone 14 EXCLUSIVE FIRST LOOK! No notch! New TITANIUM design! Do buy
-        iPhone 13!
-      </Stuff>
-      <Stuff>
-        iPhone 14 EXCLUSIVE FIRST LOOK! No notch! New TITANIUM design! Do buy
-        iPhone 13!
-      </Stuff>
-      <Stuff>
-        iPhone 14 EXCLUSIVE FIRST LOOK! No notch! New TITANIUM design! Do buy
-        iPhone 13!
-      </Stuff>
-      <Stuff>
-        iPhone 14 EXCLUSIVE FIRST LOOK! No notch! New TITANIUM design! Do buy
-        iPhone 13!
-      </Stuff>
-      <Stuff>
-        iPhone 14 EXCLUSIVE FIRST LOOK! No notch! New TITANIUM design! Do buy
-        iPhone 13!
-      </Stuff>
+      {MoreStuffData.slice(-5).map((item) => (
+        <Link href={`/story/latest/${item.id}`} key={item.id}>
+          <a>
+            <Stuff>{item.title}</Stuff>
+          </a>
+        </Link>
+      ))}
     </MoreStuffContainer>
   );
 };
@@ -43,4 +31,8 @@ const Stuff = styled.div`
   margin-top: 1rem;
   text-transform: capitalize;
   font-family: ${(props) => props.theme.bodyFont};
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;

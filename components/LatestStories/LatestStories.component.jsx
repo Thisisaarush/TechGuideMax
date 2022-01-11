@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-// data
-// import { LatestStoriesData } from "../../data/LatestStories.data";
-
 // style
 import {
   LatestStoriesContainer,

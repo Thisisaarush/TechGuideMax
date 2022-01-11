@@ -1,9 +1,6 @@
 import Link from "next/link";
 import React from "react";
 
-// data
-// import { TrendingData } from "../../data/Trending.data";
-
 // style
 import { TrendingContainer, TrendingHeader, Topic } from "./Trending.style";
 

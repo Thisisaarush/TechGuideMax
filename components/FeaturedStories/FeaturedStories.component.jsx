@@ -1,8 +1,5 @@
 import React from "react";
 
-// data
-// import FeaturedStoriesData from "../../data/FeaturedStories.data.js";
-
 // style
 import {
   FeaturedStoriesContainer,

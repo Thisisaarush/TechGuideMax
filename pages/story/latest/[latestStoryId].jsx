@@ -21,6 +21,7 @@ export const getStaticProps = async ({ params }) => {
         return story.id.toString() === params.latestStoryId;
       }),
       TrendingData,
+      LatestStoriesData,
     },
   };
 };
@@ -34,7 +35,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-const LatestStoryPage = ({ LatestStory, TrendingData }) => {
+const LatestStoryPage = ({ LatestStory, TrendingData, LatestStoriesData }) => {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -52,7 +53,7 @@ const LatestStoryPage = ({ LatestStory, TrendingData }) => {
           <ArticleComp ArticleData={LatestStory} />
           <Trending TrendingData={TrendingData} margin="trending-margin" />
         </LatestStoryPageContainer>
-        <MoreStuff />
+        <MoreStuff MoreStuffData={LatestStoriesData} />
       </main>
     </>
   );

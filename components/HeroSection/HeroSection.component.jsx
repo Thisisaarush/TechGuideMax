@@ -1,9 +1,6 @@
 import React from "react";
 import Link from "next/link";
 
-// data
-// import { HeroSectionData } from "../../data/HeroSection.data";
-
 // style
 import {
   HeroSectionContainer,
