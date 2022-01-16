@@ -3,11 +3,8 @@ import Head from "next/head";
 import Image from "next/image";
 import styled from "styled-components";
 
-// data
-import FeaturedStoriesData from "../../data/FeaturedStories.data.json";
-import FeaturedVideosData from "../../data/FeaturedVideos.data.json";
-import LatestStoriesData from "../../data/LatestStories.data.json";
-import TrendingData from "../../data/Trending.data.json";
+// server api
+import { ServerApi } from "../../lib/ServerApi";
 
 // components
 import { Story } from "../../components/Story/Story.component";
@@ -16,6 +13,14 @@ import { LatestStories } from "../../components/LatestStories/LatestStories.comp
 
 // pre-rendering data
 export const getStaticProps = async () => {
+  const data = await ServerApi();
+  const {
+    FeaturedStoriesData,
+    FeaturedVideosData,
+    LatestStoriesData,
+    TrendingData,
+  } = data;
+
   return {
     props: {
       FeaturedStoriesData,
@@ -63,6 +68,8 @@ const ApplePage = ({
                 imageUrl={story.imageUrl}
                 id={story.id}
                 key={story.id}
+                author={story.author}
+                date={story.date}
               />
             ))}
           </StoriesContainer>

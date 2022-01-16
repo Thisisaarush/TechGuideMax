@@ -1,13 +1,7 @@
 import Head from "next/head";
 
-// data
-import FeaturedStoriesData from "../data/FeaturedStories.data.json";
-import FeaturedVideosData from "../data/FeaturedVideos.data.json";
-import HeroSectionData from "../data/HeroSection.data.json";
-import LatestStoriesData from "../data/LatestStories.data.json";
-import TrailersData from "../data/Trailers.data.json";
-import HowToVideosData from "../data/HowTo.data.json";
-import TrendingData from "../data/Trending.data.json";
+// server api
+import { ServerApi } from "../lib/ServerApi";
 
 // components
 import { HeroSection } from "../components/HeroSection/HeroSection.component";
@@ -19,25 +13,37 @@ import { HowToVideos } from "../components/HowToVideos/HowToVideos.component";
 
 // pre-rendering the data
 export const getStaticProps = async () => {
+  const data = await ServerApi();
+  const {
+    HeroSectionData,
+    FeaturedStoriesData,
+    FeaturedVideosData,
+    TrailersData,
+    HowToVideosData,
+    LatestStoriesData,
+    TrendingData,
+  } = data;
+
   return {
     props: {
+      HeroSectionData,
       FeaturedStoriesData,
       FeaturedVideosData,
-      HeroSectionData,
-      LatestStoriesData,
       TrailersData,
       HowToVideosData,
+      LatestStoriesData,
       TrendingData,
     },
   };
 };
 
 export default function Home({
+  HeroSectionData,
   FeaturedStoriesData,
   FeaturedVideosData,
-  HeroSectionData,
-  LatestStoriesData,
   TrailersData,
+  HowToVideosData,
+  LatestStoriesData,
   TrendingData,
 }) {
   return (

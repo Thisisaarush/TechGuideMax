@@ -33,7 +33,10 @@ export const HeroSection = ({ HeroSectionData }) => {
               <h1>{HeroSectionData[0].title}</h1>
             </a>
           </Link>
-          <AuthorWithDate author="aarush" date="december 24, 2021" />
+          <AuthorWithDate
+            author={HeroSectionData[0].author}
+            date={HeroSectionData[0].date}
+          />
         </FirstLastTextContainer>
       </FirstSection>
 
@@ -52,7 +55,10 @@ export const HeroSection = ({ HeroSectionData }) => {
               <h1>{HeroSectionData[1].title}</h1>
             </a>
           </Link>
-          <AuthorWithDate author="aarush" date="december 24, 2021" />
+          <AuthorWithDate
+            author={HeroSectionData[1].author}
+            date={HeroSectionData[1].date}
+          />
         </MiddleTextContainer>
       </MiddleSection>
 
@@ -71,7 +77,10 @@ export const HeroSection = ({ HeroSectionData }) => {
               <h1>{HeroSectionData[2].title}</h1>
             </a>
           </Link>
-          <AuthorWithDate author="aarush" date="december 24, 2021" />
+          <AuthorWithDate
+            author={HeroSectionData[2].author}
+            date={HeroSectionData[2].date}
+          />
         </MiddleTextContainer>
       </MiddleSection>
 
@@ -90,7 +99,10 @@ export const HeroSection = ({ HeroSectionData }) => {
               <h1>{HeroSectionData[3].title}</h1>
             </a>
           </Link>
-          <AuthorWithDate author="aarush" date="december 24, 2021" />
+          <AuthorWithDate
+            author={HeroSectionData[3].author}
+            date={HeroSectionData[3].date}
+          />
         </MiddleTextContainer>
       </MiddleSection>
 
@@ -109,7 +121,10 @@ export const HeroSection = ({ HeroSectionData }) => {
               <h1>{HeroSectionData[4].title}</h1>
             </a>
           </Link>
-          <AuthorWithDate author="aarush" date="december 24, 2021" />
+          <AuthorWithDate
+            author={HeroSectionData[4].author}
+            date={HeroSectionData[4].date}
+          />
         </MiddleTextContainer>
       </MiddleSection>
 
@@ -128,7 +143,10 @@ export const HeroSection = ({ HeroSectionData }) => {
               <h1>{HeroSectionData[5].title}</h1>
             </a>
           </Link>
-          <AuthorWithDate author="aarush" date="december 24, 2021" />
+          <AuthorWithDate
+            author={HeroSectionData[5].author}
+            date={HeroSectionData[5].date}
+          />
         </FirstLastTextContainer>
       </LastSection>
     </HeroSectionContainer>

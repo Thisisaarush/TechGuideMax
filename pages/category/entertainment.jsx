@@ -2,11 +2,8 @@ import React from "react";
 import Head from "next/head";
 import styled from "styled-components";
 
-// data
-import FeaturedStoriesData from "../../data/FeaturedStories.data.json";
-import TrailersData from "../../data/Trailers.data.json";
-import LatestStoriesData from "../../data/LatestStories.data.json";
-import TrendingData from "../../data/Trending.data.json";
+// server api
+import { ServerApi } from "../../lib/ServerApi";
 
 // components
 import { Story } from "../../components/Story/Story.component";
@@ -16,6 +13,9 @@ import { ImageCover } from "../../components/ImageCover/ImageCover.component";
 
 // pre-rendering data
 export const getStaticProps = async () => {
+  const data = await ServerApi();
+  const { FeaturedStoriesData, TrailersData, LatestStoriesData, TrendingData } =
+    data;
   return {
     props: {
       FeaturedStoriesData,
@@ -61,6 +61,8 @@ const EntertainmentPage = ({
                 imageUrl={story.imageUrl}
                 id={story.id}
                 key={story.id}
+                author={story.author}
+                date={story.date}
               />
             ))}
           </StoriesContainer>

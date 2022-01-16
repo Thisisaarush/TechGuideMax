@@ -3,9 +3,8 @@ import styled from "styled-components";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-// data
-import LatestStoriesData from "../../../data/LatestStories.data.json";
-import TrendingData from "../../../data/Trending.data.json";
+// server api
+import { ServerApi } from "../../../lib/ServerApi";
 
 // components
 import { ArticleComp } from "../../../components/Article/ArticleComp.component";
@@ -15,6 +14,8 @@ import { Loading } from "../../../components/Loading/Loading.component";
 
 // pre-rendering data
 export const getStaticProps = async ({ params }) => {
+  const data = await ServerApi();
+  const { LatestStoriesData, TrendingData } = data;
   return {
     props: {
       LatestStory: LatestStoriesData.find((story) => {
@@ -26,6 +27,9 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 export const getStaticPaths = async () => {
+  const data = await ServerApi();
+  const { LatestStoriesData } = data;
+
   const paths = LatestStoriesData.map((story) => ({
     params: { latestStoryId: story.id.toString() },
   }));

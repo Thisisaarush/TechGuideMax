@@ -8,7 +8,7 @@ import { ImageCover } from "../ImageCover/ImageCover.component";
 import { AuthorWithDate } from "../AuthorWithDate/AuthorWithDate.component";
 import Link from "next/link";
 
-export const Story = ({ title, imageUrl, id }) => {
+export const Story = ({ title, imageUrl, id, author, date }) => {
   return (
     <StoryContainer>
       <Link href={`/story/featured/${encodeURIComponent(id)}`}>
@@ -22,7 +22,7 @@ export const Story = ({ title, imageUrl, id }) => {
             <h4>{title}</h4>
           </a>
         </Link>
-        <AuthorWithDate author="aarush" date="december 21, 2021" />
+        <AuthorWithDate author={author} date={date} />
       </StoryTextContainer>
     </StoryContainer>
   );

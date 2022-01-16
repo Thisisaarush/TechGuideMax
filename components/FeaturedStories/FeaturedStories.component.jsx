@@ -22,6 +22,8 @@ export const FeaturedStories = ({ FeaturedStoriesData }) => {
               imageUrl={data.imageUrl}
               key={data.id}
               id={data.id}
+              author={data.author}
+              date={data.date}
             />
           ))}
       </StoriesContainer>

@@ -3,10 +3,8 @@ import Head from "next/head";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 
-// data
-import HeroSectionData from "../../data/HeroSection.data.json";
-import TrendingData from "../../data/Trending.data.json";
-import LatestStoriesData from "../../data/LatestStories.data.json";
+// server api
+import { ServerApi } from "../../lib/ServerApi";
 
 // components
 import { ArticleComp } from "../../components/Article/ArticleComp.component";
@@ -16,6 +14,9 @@ import { Loading } from "../../components/Loading/Loading.component";
 
 // pre-rendering dynamic routes
 export const getStaticProps = async ({ params }) => {
+  const data = await ServerApi();
+  const { HeroSectionData, LatestStoriesData, TrendingData } = data;
+
   return {
     props: {
       HeroSection: HeroSectionData.find((data) => {
@@ -27,6 +28,9 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 export const getStaticPaths = async () => {
+  const data = await ServerApi();
+  const { HeroSectionData } = data;
+
   const paths = HeroSectionData.map((data) => ({
     params: { heroId: data.id.toString() },
   }));
@@ -76,14 +80,14 @@ export const ArticlePageContainer = styled.div`
     margin-top: 12.9rem;
   }
 
-  @media screen and (${props => props.theme.mobileSize}) {
+  @media screen and (${(props) => props.theme.mobileSize}) {
     width: 95%;
     flex-direction: column;
     .trending-margin {
       margin-top: 2rem;
     }
   }
-  @media screen and (${props => props.theme.tabSize}) {
+  @media screen and (${(props) => props.theme.tabSize}) {
     width: 95%;
     align-items: center;
     flex-direction: column;

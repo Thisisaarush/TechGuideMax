@@ -3,9 +3,8 @@ import styled from "styled-components";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-// data
-import FeaturedStoriesData from "../../data/FeaturedStories.data.json";
-import LatestStoriesData from "../../data/LatestStories.data.json";
+// server api
+import { ServerApi } from "../../lib/ServerApi";
 
 // components
 import { Story } from "../../components/Story/Story.component";
@@ -14,6 +13,9 @@ import { Loading } from "../../components/Loading/Loading.component";
 
 // pre-rendering data
 export const getStaticProps = async () => {
+  const data = await ServerApi();
+  const { FeaturedStoriesData, LatestStoriesData } = data;
+
   return {
     props: {
       FeaturedStoriesData,
@@ -22,6 +24,9 @@ export const getStaticProps = async () => {
   };
 };
 export const getStaticPaths = async () => {
+  const data = await ServerApi();
+  const { FeaturedStoriesData, LatestStoriesData } = data;
+
   const paths =
     FeaturedStoriesData.map((story) => ({
       params: { searchText: story.title },
@@ -71,6 +76,8 @@ const SearchPage = ({ FeaturedStoriesData, LatestStoriesData }) => {
                     imageUrl={story.imageUrl}
                     id={story.id}
                     key={story.id}
+                    author={story.author}
+                    date={story.date}
                   />
                 ))
               : null}

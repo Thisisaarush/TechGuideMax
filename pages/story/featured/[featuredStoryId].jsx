@@ -3,10 +3,8 @@ import styled from "styled-components";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-// data
-import FeaturedStoriesData from "../../../data/FeaturedStories.data.json";
-import TrendingData from "../../../data/Trending.data.json";
-import LatestStoriesData from "../../../data/LatestStories.data.json";
+// server api
+import { ServerApi } from "../../../lib/ServerApi";
 
 // components
 import { ArticleComp } from "../../../components/Article/ArticleComp.component";
@@ -16,6 +14,8 @@ import { Loading } from "../../../components/Loading/Loading.component";
 
 // pre-rendering data
 export const getStaticProps = async ({ params }) => {
+  const data = await ServerApi();
+  const { FeaturedStoriesData, LatestStoriesData, TrendingData } = data;
   return {
     props: {
       FeaturedStory: FeaturedStoriesData.find((story) => {
@@ -27,6 +27,9 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 export const getStaticPaths = async () => {
+  const data = await ServerApi();
+  const { FeaturedStoriesData } = data;
+
   const paths = FeaturedStoriesData.map((story) => ({
     params: { featuredStoryId: story.id.toString() },
   }));
