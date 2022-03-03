@@ -9,7 +9,7 @@ import { Video } from "../Video/Video.component";
 
 export const Trailers = ({ TrailersData }) => {
   const [videoUrl, setVideoUrl] = useState(TrailersData[0].attributes.videoUrl);
-  const url = "http://localhost:1337";
+  const url = process.env.NEXT_PUBLIC_STRAPI_URL;
 
   return (
     <TrailersContainer>

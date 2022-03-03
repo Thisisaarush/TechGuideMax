@@ -51,7 +51,7 @@ const WindowsPage = ({
     return story.attributes.category.toLowerCase() === "windows";
   });
 
-  const url = "http://localhost:1337";
+  const url = process.env.NEXT_PUBLIC_STRAPI_URL;
 
   return (
     <>

@@ -11,7 +11,7 @@ export const HowToVideos = ({ HowToVideosData }) => {
   const [videoUrl, setVideoUrl] = useState(
     HowToVideosData[0].attributes.videoUrl
   );
-  const url = "http://localhost:1337";
+  const url = process.env.NEXT_PUBLIC_STRAPI_URL;
 
   return (
     <HowToVideosContainer>

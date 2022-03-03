@@ -16,7 +16,7 @@ import { ImageCover } from "../ImageCover/ImageCover.component";
 import { AuthorWithDate } from "../AuthorWithDate/AuthorWithDate.component";
 
 export const HeroSection = ({ HeroSectionData }) => {
-  const url = "http://localhost:1337";
+  const url = process.env.NEXT_PUBLIC_STRAPI_URL;
 
   return (
     <HeroSectionContainer>

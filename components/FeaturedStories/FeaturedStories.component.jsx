@@ -10,7 +10,7 @@ import {
 import { Story } from "../Story/Story.component";
 
 export const FeaturedStories = ({ FeaturedStoriesData }) => {
-  const url = "http://localhost:1337";
+  const url = process.env.NEXT_PUBLIC_STRAPI_URL;
 
   return (
     <FeaturedStoriesContainer>

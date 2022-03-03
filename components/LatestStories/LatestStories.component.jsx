@@ -12,7 +12,7 @@ import { Trending } from "../Trending/Trending.component";
 
 export const LatestStories = ({ LatestStoriesData, TrendingData, title }) => {
   const [storiesLoaded, setStoriesLoaded] = useState(5);
-  const url = "http://localhost:1337";
+  const url = process.env.NEXT_PUBLIC_STRAPI_URL;
 
   useEffect(() => {}, [storiesLoaded]);
   // handling more stories to load on button click

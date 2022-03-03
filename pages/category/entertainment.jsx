@@ -51,7 +51,7 @@ const EntertainmentPage = ({
     return story.attributes.category.toLowerCase() === "entertainment";
   });
 
-  const url = "http://localhost:1337";
+  const url = process.env.NEXT_PUBLIC_STRAPI_URL;
 
   return (
     <>
