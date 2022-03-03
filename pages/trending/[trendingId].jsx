@@ -3,8 +3,8 @@ import Head from "next/head";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 
-// server api
-import { ServerApi } from "../../lib/ServerApi";
+// strapi api
+import { LatestStoriesStrapiApi, TrendingStrapiApi } from "../../lib/strapiApi";
 
 // components
 import { ArticleComp } from "../../components/Article/ArticleComp.component";
@@ -14,8 +14,12 @@ import { Loading } from "../../components/Loading/Loading.component";
 
 // pre-rendering dynamic routes
 export const getStaticProps = async ({ params }) => {
-  const data = await ServerApi();
-  const { LatestStoriesData, TrendingData } = data;
+  const LatestStories = await LatestStoriesStrapiApi();
+  const Trending = await TrendingStrapiApi();
+
+  const LatestStoriesData = LatestStories.data;
+  const TrendingData = Trending.data;
+
   return {
     props: {
       TrendingSection: TrendingData.find((data) => {
@@ -27,8 +31,8 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 export const getStaticPaths = async () => {
-  const data = await ServerApi();
-  const { TrendingData } = data;
+  const Trending = await TrendingStrapiApi();
+  const TrendingData = Trending.data;
 
   const paths = TrendingData.map((data) => ({
     params: { trendingId: data.id.toString() },
@@ -49,7 +53,7 @@ const TrendingPage = ({ TrendingSection, TrendingData, LatestStoriesData }) => {
   return (
     <>
       <Head>
-        <title>{`${TrendingSection.title} - TechGuideMax`}</title>
+        <title>{`${TrendingSection.attributes.title} - TechGuideMax`}</title>
       </Head>
 
       <main>

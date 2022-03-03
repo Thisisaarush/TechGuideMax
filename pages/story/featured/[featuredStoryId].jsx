@@ -3,8 +3,12 @@ import styled from "styled-components";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-// server api
-import { ServerApi } from "../../../lib/ServerApi";
+// strapi api
+import {
+  FeaturedStoriesStrapiApi,
+  LatestStoriesStrapiApi,
+  TrendingStrapiApi,
+} from "../../../lib/strapiApi";
 
 // components
 import { ArticleComp } from "../../../components/Article/ArticleComp.component";
@@ -14,21 +18,27 @@ import { Loading } from "../../../components/Loading/Loading.component";
 
 // pre-rendering data
 export const getStaticProps = async ({ params }) => {
-  const data = await ServerApi();
-  const { FeaturedStoriesData, LatestStoriesData, TrendingData } = data;
+  const FeaturedStories = await FeaturedStoriesStrapiApi();
+  const LatestStories = await LatestStoriesStrapiApi();
+  const Trending = await TrendingStrapiApi();
+
+  const FeaturedStoriesData = FeaturedStories.data;
+  const LatestStoriesData = LatestStories.data;
+  const TrendingData = Trending.data;
+
   return {
     props: {
       FeaturedStory: FeaturedStoriesData.find((story) => {
         return story.id.toString() === params.featuredStoryId;
       }),
-      TrendingData,
       LatestStoriesData,
+      TrendingData,
     },
   };
 };
 export const getStaticPaths = async () => {
-  const data = await ServerApi();
-  const { FeaturedStoriesData } = data;
+  const FeaturedStories = await FeaturedStoriesStrapiApi();
+  const FeaturedStoriesData = FeaturedStories.data;
 
   const paths = FeaturedStoriesData.map((story) => ({
     params: { featuredStoryId: story.id.toString() },
@@ -53,7 +63,7 @@ const FeaturedStoryPage = ({
   return (
     <>
       <Head>
-        <title>{`${FeaturedStory.title} - TechGuideMax`}</title>
+        <title>{`${FeaturedStory.attributes.title} - TechGuideMax`}</title>
       </Head>
 
       <main>

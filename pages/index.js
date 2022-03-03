@@ -1,7 +1,15 @@
 import Head from "next/head";
 
-// server api
-import { ServerApi } from "../lib/ServerApi";
+// strapi api
+import {
+  HeroSectionStrapiApi,
+  FeaturedStoriesStrapiApi,
+  FeaturedVideosStrapiApi,
+  TrailersStrapiApi,
+  HowToStrapiApi,
+  LatestStoriesStrapiApi,
+  TrendingStrapiApi,
+} from "../lib/strapiApi";
 
 // components
 import { HeroSection } from "../components/HeroSection/HeroSection.component";
@@ -13,16 +21,21 @@ import { HowToVideos } from "../components/HowToVideos/HowToVideos.component";
 
 // pre-rendering the data
 export const getStaticProps = async () => {
-  const data = await ServerApi();
-  const {
-    HeroSectionData,
-    FeaturedStoriesData,
-    FeaturedVideosData,
-    TrailersData,
-    HowToVideosData,
-    LatestStoriesData,
-    TrendingData,
-  } = data;
+  const HeroSection = await HeroSectionStrapiApi();
+  const FeaturedStories = await FeaturedStoriesStrapiApi();
+  const FeaturedVideos = await FeaturedVideosStrapiApi();
+  const Trailers = await TrailersStrapiApi();
+  const HowToVideos = await HowToStrapiApi();
+  const LatestStories = await LatestStoriesStrapiApi();
+  const Trending = await TrendingStrapiApi();
+
+  const HeroSectionData = HeroSection.data;
+  const FeaturedStoriesData = FeaturedStories.data;
+  const FeaturedVideosData = FeaturedVideos.data;
+  const TrailersData = Trailers.data;
+  const HowToVideosData = HowToVideos.data;
+  const LatestStoriesData = LatestStories.data;
+  const TrendingData = Trending.data;
 
   return {
     props: {

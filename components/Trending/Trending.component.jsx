@@ -14,7 +14,7 @@ export const Trending = ({ TrendingData, margin }) => {
         {TrendingData.map((data) => (
           <Link href={`/trending/${encodeURIComponent(data.id)}`} key={data.id}>
             <a>
-              <Topic>{data.title}</Topic>
+              <Topic>{data.attributes.title}</Topic>
             </a>
           </Link>
         ))}

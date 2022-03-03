@@ -11,7 +11,10 @@ import { Video } from "../Video/Video.component";
 import { OtherVideo } from "../OtherVideo/OtherVideo.component";
 
 export const FeaturedVideos = ({ FeaturedVideosData }) => {
-  const [videoUrl, setVideoUrl] = useState(FeaturedVideosData[0].videoUrl);
+  const [videoUrl, setVideoUrl] = useState(
+    FeaturedVideosData[0].attributes.videoUrl
+  );
+  const url = "http://localhost:1337";
 
   return (
     <FeaturedVideosContainer>
@@ -19,12 +22,12 @@ export const FeaturedVideos = ({ FeaturedVideosData }) => {
       <VideosContainer>
         <Video videoID={videoUrl} />
         <OtherVideo
-          title1={FeaturedVideosData[1].title}
-          title2={FeaturedVideosData[2].title}
-          imageUrl1={FeaturedVideosData[1].imageUrl}
-          imageUrl2={FeaturedVideosData[2].imageUrl}
-          video1={FeaturedVideosData[1].videoUrl}
-          video2={FeaturedVideosData[2].videoUrl}
+          title1={FeaturedVideosData[1].attributes.title}
+          title2={FeaturedVideosData[2].attributes.title}
+          imageUrl1={`${url}${FeaturedVideosData[1].attributes.imageUrl.data.attributes.formats.small.url}`}
+          imageUrl2={`${url}${FeaturedVideosData[2].attributes.imageUrl.data.attributes.formats.small.url}`}
+          video1={FeaturedVideosData[1].attributes.videoUrl}
+          video2={FeaturedVideosData[2].attributes.videoUrl}
           setVideoUrl={setVideoUrl}
         />
       </VideosContainer>

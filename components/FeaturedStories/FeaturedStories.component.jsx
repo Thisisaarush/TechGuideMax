@@ -10,6 +10,8 @@ import {
 import { Story } from "../Story/Story.component";
 
 export const FeaturedStories = ({ FeaturedStoriesData }) => {
+  const url = "http://localhost:1337";
+
   return (
     <FeaturedStoriesContainer>
       <h1>FEATURED STORIES</h1>
@@ -18,12 +20,12 @@ export const FeaturedStories = ({ FeaturedStoriesData }) => {
           .reverse()
           .map((data) => (
             <Story
-              title={data.title}
-              imageUrl={data.imageUrl}
+              title={data.attributes.title}
+              imageUrl={`${url}${data.attributes.imageUrl.data.attributes.formats.small.url}`}
               key={data.id}
               id={data.id}
-              author={data.author}
-              date={data.date}
+              author={data.attributes.author}
+              date={data.attributes.date}
             />
           ))}
       </StoriesContainer>

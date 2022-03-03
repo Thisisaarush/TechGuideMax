@@ -2,8 +2,13 @@ import React from "react";
 import Head from "next/head";
 import styled from "styled-components";
 
-// server api
-import { ServerApi } from "../../lib/ServerApi";
+// strapi api
+import {
+  FeaturedStoriesStrapiApi,
+  LatestStoriesStrapiApi,
+  TrendingStrapiApi,
+  TrailersStrapiApi,
+} from "../../lib/strapiApi";
 
 // components
 import { Story } from "../../components/Story/Story.component";
@@ -13,9 +18,16 @@ import { ImageCover } from "../../components/ImageCover/ImageCover.component";
 
 // pre-rendering data
 export const getStaticProps = async () => {
-  const data = await ServerApi();
-  const { FeaturedStoriesData, TrailersData, LatestStoriesData, TrendingData } =
-    data;
+  const FeaturedStories = await FeaturedStoriesStrapiApi();
+  const LatestStories = await LatestStoriesStrapiApi();
+  const Trending = await TrendingStrapiApi();
+  const Trailers = await TrailersStrapiApi();
+
+  const FeaturedStoriesData = FeaturedStories.data;
+  const LatestStoriesData = LatestStories.data;
+  const TrendingData = Trending.data;
+  const TrailersData = Trailers.data;
+
   return {
     props: {
       FeaturedStoriesData,
@@ -33,11 +45,13 @@ const EntertainmentPage = ({
   TrendingData,
 }) => {
   const filteredFeaturedStories = FeaturedStoriesData.filter((story) => {
-    return story.category.toLowerCase() === "entertainment";
+    return story.attributes.category.toLowerCase() === "entertainment";
   });
   const filteredLatestStories = LatestStoriesData.filter((story) => {
-    return story.category.toLowerCase() === "entertainment";
+    return story.attributes.category.toLowerCase() === "entertainment";
   });
+
+  const url = "http://localhost:1337";
 
   return (
     <>
@@ -57,12 +71,12 @@ const EntertainmentPage = ({
           <StoriesContainer>
             {filteredFeaturedStories.map((story) => (
               <Story
-                title={story.title}
-                imageUrl={story.imageUrl}
+                title={story.attributes.title}
+                imageUrl={`${url}${story.attributes.imageUrl.data.attributes.formats.small.url}`}
                 id={story.id}
                 key={story.id}
-                author={story.author}
-                date={story.date}
+                author={story.attributes.author}
+                date={story.attributes.date}
               />
             ))}
           </StoriesContainer>

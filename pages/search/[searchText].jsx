@@ -3,8 +3,11 @@ import styled from "styled-components";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-// server api
-import { ServerApi } from "../../lib/ServerApi";
+// strapi api
+import {
+  FeaturedStoriesStrapiApi,
+  LatestStoriesStrapiApi,
+} from "../../lib/strapiApi";
 
 // components
 import { Story } from "../../components/Story/Story.component";
@@ -13,8 +16,11 @@ import { Loading } from "../../components/Loading/Loading.component";
 
 // pre-rendering data
 export const getStaticProps = async () => {
-  const data = await ServerApi();
-  const { FeaturedStoriesData, LatestStoriesData } = data;
+  const FeaturedStories = await FeaturedStoriesStrapiApi();
+  const LatestStories = await LatestStoriesStrapiApi();
+
+  const FeaturedStoriesData = FeaturedStories.data;
+  const LatestStoriesData = LatestStories.data;
 
   return {
     props: {
@@ -24,15 +30,18 @@ export const getStaticProps = async () => {
   };
 };
 export const getStaticPaths = async () => {
-  const data = await ServerApi();
-  const { FeaturedStoriesData, LatestStoriesData } = data;
+  const FeaturedStories = await FeaturedStoriesStrapiApi();
+  const LatestStories = await LatestStoriesStrapiApi();
+
+  const FeaturedStoriesData = FeaturedStories.data;
+  const LatestStoriesData = LatestStories.data;
 
   const paths =
     FeaturedStoriesData.map((story) => ({
-      params: { searchText: story.title },
+      params: { searchText: story.attributes.title },
     })) ||
     LatestStoriesData.map((story) => ({
-      params: { searchText: story.title },
+      params: { searchText: story.attributes.title },
     }));
 
   return {
@@ -45,15 +54,21 @@ const SearchPage = ({ FeaturedStoriesData, LatestStoriesData }) => {
   const router = useRouter();
   // filtering stories for search queries
   const filteredFeaturedStories = FeaturedStoriesData.filter((story) => {
-    return story.title.toLowerCase().includes(router.query.searchText);
+    return story.attributes.title
+      .toLowerCase()
+      .includes(router.query.searchText);
   });
   const filteredLatestStories = LatestStoriesData.filter((story) => {
-    return story.title.toLowerCase().includes(router.query.searchText);
+    return story.attributes.title
+      .toLowerCase()
+      .includes(router.query.searchText);
   });
 
   if (router.isFallback) {
     return <Loading />;
   }
+
+  const url = "http://localhost:1337";
 
   return (
     <>
@@ -72,12 +87,12 @@ const SearchPage = ({ FeaturedStoriesData, LatestStoriesData }) => {
             {filteredFeaturedStories.length
               ? filteredFeaturedStories.map((story) => (
                   <Story
-                    title={story.title}
-                    imageUrl={story.imageUrl}
+                    title={story.attributes.title}
+                    imageUrl={`${url}${story.attributes.imageUrl.data.attributes.formats.small.url}`}
                     id={story.id}
                     key={story.id}
-                    author={story.author}
-                    date={story.date}
+                    author={story.attributes.author}
+                    date={story.attributes.date}
                   />
                 ))
               : null}
@@ -91,10 +106,10 @@ const SearchPage = ({ FeaturedStoriesData, LatestStoriesData }) => {
             {filteredLatestStories.length
               ? filteredLatestStories.map((story) => (
                   <StoryHorizontal
-                    title={story.title}
-                    imageUrl={story.imageUrl}
-                    author={story.author}
-                    date={story.date}
+                    title={story.attributes.title}
+                    imageUrl={`${url}${story.attributes.imageUrl.data.attributes.formats.small.url}`}
+                    author={story.attributes.author}
+                    date={story.attributes.date}
                     id={story.id}
                     key={story.id}
                   />

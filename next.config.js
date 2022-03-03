@@ -1,7 +1,12 @@
 module.exports = {
   reactStrictMode: true,
-  experimental: {
+  images: {
+    domains: ["localhost"],
+  },
+  compiler: {
     styledComponents: true,
+  },
+  experimental: {
     scrollRestoration: true,
   },
 };

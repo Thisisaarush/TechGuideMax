@@ -12,6 +12,7 @@ import { Trending } from "../Trending/Trending.component";
 
 export const LatestStories = ({ LatestStoriesData, TrendingData, title }) => {
   const [storiesLoaded, setStoriesLoaded] = useState(5);
+  const url = "http://localhost:1337";
 
   useEffect(() => {}, [storiesLoaded]);
   // handling more stories to load on button click
@@ -32,10 +33,10 @@ export const LatestStories = ({ LatestStoriesData, TrendingData, title }) => {
             .map((data) => (
               <StoryHorizontal
                 key={data.id}
-                title={data.title}
-                imageUrl={data.imageUrl}
-                author={data.author}
-                date={data.date}
+                title={data.attributes.title}
+                imageUrl={`${url}${data.attributes.imageUrl.data.attributes.formats.small.url}`}
+                author={data.attributes.author}
+                date={data.attributes.date}
                 id={data.id}
               />
             ))}
